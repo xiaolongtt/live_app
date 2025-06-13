@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/live_app_common?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: 123456
+
+dubbo:
+  application:
+    name: live-user-provide
+  registry:
+    address: nacos://127.0.0.1:8848?namespace=qiyu-live-test&&username=qiyu&&password=qiyu
+  protocol:
+    name: dubbo
+    port: 9098

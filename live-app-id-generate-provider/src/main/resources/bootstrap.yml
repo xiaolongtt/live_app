@@ -1,0 +1,13 @@
+spring:
+  #  该服务的名称
+  application:
+    name: live-id-provider
+  #    访问nacos的用户名和密码
+  cloud:
+    nacos:
+      username: qiyu
+      password: qiyu
+      #      nacos的服务地址和这个服务属于的命名空间
+      discovery:
+        server-addr: 127.0.0.1:8848
+        namespace: qiyu-live-test
