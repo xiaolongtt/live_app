@@ -34,21 +34,38 @@ public class IUserTagServiceImpl implements IUserTagService {
      */
     @Resource
     private RedisTemplate<String, String> redisTemplate;
-
+    /**
+     * 用来用户标签的缓存
+     */
     @Resource
     private RedisTemplate<String, UserTagDTO> userTagDTORedisTemplate;
 
+    /**
+     * 分布式锁的名称
+     */
     private static final String LOCK_NAME="userTagLock";
+    /**
+     * redis中用户标签的key
+     */
     private static final String USER_TAG_KEY = "userTag:";
+    /**
+     *  设置标签,同时会更新数据库中的数据，那么redis中的数据为旧数据就要删除数据
+     * @param userId
+     * @param userTagsEnum
+     * @return
+     */
+    //TODO 这里差一个延迟双删，引入mq消息队列。设置一秒钟的延迟。先删除redis，更新数据库，再删除一次redis，这样可以保证数据的一致性
     @Override
     public boolean setTag(Long userId, UserTagsEnum userTagsEnum)  {
         int result = userTagMapper.setTag(userId, userTagsEnum.getFieldName(), userTagsEnum.getTag());
+        //影响的行数大于0，说明更新成功。否则更新失败要单独插入，使用分布式锁防止多个线程插入数据
         if(result>0){
             // 从redis中删除
             String key = USER_TAG_KEY + userId;
             userTagDTORedisTemplate.delete(key);
             return true;
         }
+
         /**
          * 可以用redis实现一个分布式锁，来保证只有一个线程可以插入数据，保证了数据库的安全。也可以使用Redis的组件Redisson来实现分布式锁。
          * (使用SETNX来实现，向redis中存入一个k-V,如果其他线程还要像里面存入，就会返回false,要记得删除这个k-V和设置过期时间)
@@ -67,10 +84,13 @@ public class IUserTagServiceImpl implements IUserTagService {
                 return SetResult;
             }
         });
+        //没有获取到分布式锁，不用你设置标签了，直接返回false
         if(!"OK".equals(setAns)){
             return false;
         }
+        //获取到分布式锁进行插入操作
         UserTagPO userTagPO = userTagMapper.selectById(userId);
+        //如果数据库中没有数据，就插入数据。如有数据，就不用插入新的数据了，应为是其他线程已经插入了数据。
         if(userTagPO==null){
             userTagPO = new UserTagPO();
             userTagPO.setUserId(userId);
@@ -83,12 +103,19 @@ public class IUserTagServiceImpl implements IUserTagService {
                 userTagPO.setTagInfo03(userTagsEnum.getTag());
             }
             userTagMapper.insert(userTagPO);
+            // 插入成功后，要从redis中删除锁
             redisTemplate.delete(LOCK_NAME + userId);
             return true;
         }
         return false;
     }
 
+    /**
+     *  取消标签
+     * @param userId
+     * @param userTagsEnum
+     * @return
+     */
     @Override
     public boolean cancelTag(Long userId, UserTagsEnum userTagsEnum) {
         int result = userTagMapper.cancelTag(userId, userTagsEnum.getFieldName(), userTagsEnum.getTag());
@@ -98,9 +125,15 @@ public class IUserTagServiceImpl implements IUserTagService {
         // 从redis中删除
         String key = USER_TAG_KEY + userId;
         userTagDTORedisTemplate.delete(key);
-        return false;
+        return true;
     }
 
+    /**
+     *  判断用户是否有某个标签
+     * @param userId
+     * @param userTagsEnum
+     * @return
+     */
     @Override
     public boolean containTag(Long userId, UserTagsEnum userTagsEnum) {
         // 先从redis中获取

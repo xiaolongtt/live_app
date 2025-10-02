@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4837df83-4849-4af5-b803-db299df046a2" name="更改" comment="v1.0">
+      <change afterPath="$PROJECT_DIR$/.idea/JavaSceneConfigState.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/MarsCodeWorkspaceAppSettings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/aws.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/42f462aa-479a-47c2-9de9-b0d6c48e82f3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/42f462aa-479a-47c2-9de9-b0d6c48e82f3/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/42f462aa-479a-47c2-9de9-b0d6c48e82f3/storage_v2/_src_/schema/mysql.osA4Bg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/42f462aa-479a-47c2-9de9-b0d6c48e82f3/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/42f462aa-479a-47c2-9de9-b0d6c48e82f3/storage_v2/_src_/schema/sys.zb4BAA.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2025-01-17T202359.200.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2025-01-17T205753.200.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2025-01-25T150951.200.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/http-client.cookies" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-account-interface/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-account-interface/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-account-interface/src/main/java/com/example/liveappaccountinterface/IAccountTokenRPC.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-account-interface/src/test/java/com/example/liveappaccountinterface/LiveAppAccountInterfaceApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-account-provider/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-account-provider/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-account-provider/src/main/java/com/example/liveappaccountprovider/LiveAppAccountProviderApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-account-provider/src/main/java/com/example/liveappaccountprovider/rpc/AccountTokenRpcImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-account-provider/src/main/java/com/example/liveappaccountprovider/service/AccountTokenService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-account-provider/src/main/java/com/example/liveappaccountprovider/service/impl/AccountTokenServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-account-provider/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-id-generate-interface/src/main/java/org/example/live/id/generate/Enum/IdTypeEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-provide/src/main/java/org/example/live/user/provider/dao/mapper/UserPhoneMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-app-api/src/main/java/org/example/live/user/api/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-app-api/src/main/java/org/example/live/user/api/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-app-interface/src/main/java/org/example/live/user/dto/UserLoginDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-app-interface/src/main/java/org/example/live/user/dto/UserLoginDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-app-interface/src/main/java/org/example/live/user/dto/UserPhoneDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-app-interface/src/main/java/org/example/live/user/dto/UserPhoneDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-app-msg-provider/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/live-app-msg-provider/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-app-msg-provider/src/main/java/org/example/live/msg/provicer/Service/impl/IMsgRpcServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-app-msg-provider/src/main/java/org/example/live/msg/provicer/Service/impl/IMsgRpcServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-app-provide/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/live-app-provide/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-app-provide/src/main/java/org/example/live/user/provider/Service/Impl/IUserPhoneServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-app-provide/src/main/java/org/example/live/user/provider/Service/Impl/IUserPhoneServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-app-provide/src/main/java/org/example/live/user/provider/Service/Impl/IUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-app-provide/src/main/java/org/example/live/user/provider/Service/Impl/IUserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-app-provide/src/main/java/org/example/live/user/provider/Service/Impl/IUserTagServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-app-provide/src/main/java/org/example/live/user/provider/Service/Impl/IUserTagServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/live-app-account-provider" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$USER_HOME$/.jdks/corretto-17.0.15/lib/src.zip!/java.base/java/lang/String.java" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$PROJECT_DIR$/../../apache-maven-3.6.1" />
+        <option name="userSettingsFile" value="D:\apache-maven-3.6.1\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="jreName" value="11" />
+  </component>
+  <component name="ProjectId" id="2rhEVLmQwmdw5BDLpEjE2JXGz7C" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;TODO_SCOPE&quot;: &quot;所有位置&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/idea/javaweb/waimai&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.29885057&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;d6ba0f2f4487b5246a6b44297fc101b1&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mongo&quot;,
+      &quot;mysql&quot;
+    ]
+  }
+}</component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\idea\live-app\live-app-api\src\main\resources" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.example.liveappaccountprovider.service" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.MsgProviderApplication">
+    <configuration name="generated-requests | #11" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="11" requestIdentifier="#11" runType="运行单个请求">
+      <method v="2" />
+    </configuration>
+    <configuration name="generated-requests | #9" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="9" requestIdentifier="#9" runType="运行单个请求">
+      <method v="2" />
+    </configuration>
+    <configuration name="ApiWebApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="live-app-api" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.live.user.api.ApiWebApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.live.user.api.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MsgProviderApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="live-app-msg-provider" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.live.msg.provicer.MsgProviderApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.live.msg.provicer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserProviderApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="live-app-provide" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.live.user.provider.UserProviderApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.live.user.provider.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.MsgProviderApplication" />
+        <item itemvalue="Spring Boot.UserProviderApplication" />
+        <item itemvalue="Spring Boot.ApiWebApplication" />
+        <item itemvalue="HTTP 请求.generated-requests | #11" />
+        <item itemvalue="HTTP 请求.generated-requests | #9" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="4837df83-4849-4af5-b803-db299df046a2" name="更改" comment="" />
+      <created>1737002929372</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1737002929372</updated>
+      <workItem from="1737002930753" duration="9709000" />
+      <workItem from="1737098597638" duration="12177000" />
+      <workItem from="1737606467138" duration="1258000" />
+      <workItem from="1737625470827" duration="2951000" />
+      <workItem from="1737776523573" duration="5096000" />
+      <workItem from="1737787559214" duration="9180000" />
+      <workItem from="1737899494123" duration="607000" />
+      <workItem from="1738132326883" duration="13644000" />
+      <workItem from="1738212118832" duration="1206000" />
+      <workItem from="1738316994098" duration="1780000" />
+      <workItem from="1738391001214" duration="1207000" />
+      <workItem from="1738733949036" duration="12414000" />
+      <workItem from="1738816982918" duration="18236000" />
+      <workItem from="1738904705342" duration="8778000" />
+      <workItem from="1738993222859" duration="4191000" />
+      <workItem from="1739005405363" duration="1240000" />
+      <workItem from="1739006653562" duration="8757000" />
+      <workItem from="1739526670326" duration="4000" />
+      <workItem from="1740321748707" duration="2000" />
+      <workItem from="1740370698367" duration="599000" />
+      <workItem from="1741324813488" duration="6000" />
+      <workItem from="1741499453881" duration="599000" />
+      <workItem from="1741529486590" duration="99000" />
+      <workItem from="1741863657295" duration="601000" />
+      <workItem from="1742049680972" duration="40000" />
+      <workItem from="1742113666409" duration="6000" />
+      <workItem from="1742114888422" duration="24000" />
+      <workItem from="1742373771954" duration="2000" />
+      <workItem from="1742386593878" duration="570000" />
+      <workItem from="1742388624812" duration="25000" />
+      <workItem from="1742464319931" duration="7000" />
+      <workItem from="1742818320763" duration="5000" />
+      <workItem from="1743031741648" duration="2000" />
+      <workItem from="1743429050741" duration="638000" />
+      <workItem from="1744004441388" duration="1782000" />
+      <workItem from="1744006800206" duration="631000" />
+      <workItem from="1744196659384" duration="2608000" />
+      <workItem from="1744539400439" duration="2285000" />
+      <workItem from="1744701339747" duration="1007000" />
+      <workItem from="1749717969136" duration="38000" />
+      <workItem from="1749718018255" duration="1976000" />
+      <workItem from="1749798414113" duration="5325000" />
+      <workItem from="1750059586797" duration="4968000" />
+      <workItem from="1750922644592" duration="1397000" />
+      <workItem from="1750991419828" duration="332000" />
+      <workItem from="1752029869056" duration="663000" />
+      <workItem from="1752049647644" duration="2000" />
+      <workItem from="1752570335920" duration="6000" />
+      <workItem from="1754548319145" duration="5418000" />
+      <workItem from="1754640485678" duration="600000" />
+      <workItem from="1756559445298" duration="1183000" />
+      <workItem from="1757054165809" duration="30176000" />
+      <workItem from="1757251092447" duration="2766000" />
+      <workItem from="1757818371743" duration="5655000" />
+      <workItem from="1757988281559" duration="2718000" />
+      <workItem from="1758454587974" duration="1446000" />
+      <workItem from="1759282445345" duration="5809000" />
+    </task>
+    <task id="LOCAL-00001" summary="v1.0">
+      <option name="closed" value="true" />
+      <created>1749798461755</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1749798461755</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="v1.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="v1.0" />
+  </component>
+</project>

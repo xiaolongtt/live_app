@@ -23,7 +23,7 @@ import java.util.stream.Collectors;
 @RequestMapping("/User")
 public class UserController {
 
-//    使用DubboReference进行远程RPC注入
+    //使用DubboReference进行远程RPC注入
     @DubboReference
     private IUserRpc iUserRpc;
     @GetMapping("/getUserInfo")

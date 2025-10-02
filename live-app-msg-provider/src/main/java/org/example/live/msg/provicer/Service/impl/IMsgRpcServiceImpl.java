@@ -25,6 +25,7 @@ import java.util.concurrent.TimeUnit;
 public class IMsgRpcServiceImpl implements IMsgRpcService {
 
     private static Logger logger= LoggerFactory.getLogger(IMsgRpcServiceImpl.class);
+    //用来储存验证码的key，有效期60s
     private static final String REDIS_KEY="msg_code:";
 
     @Resource
@@ -33,32 +34,32 @@ public class IMsgRpcServiceImpl implements IMsgRpcService {
     @Resource
     private MsgMapper msgMapper;
 
+    //发送短信验证码
     @Override
     public MsgSendResultEnum sendMessage(String phone) {
         if(StringUtils.isEmpty(phone)){
             return MsgSendResultEnum.MSG_PARAM_ERROR;
         }
-        //生成6位随机的验证码，有效期为60s,不能在60s内重复发送
+        //生成6位随机的验证码，有效期为60s,不能在60s内重复发送，使用redis缓存60s
         String key=REDIS_KEY+phone;
         Boolean hasKey = redisTemplate.hasKey(key);
         if(hasKey){
             logger.warn("手机号：{}，60s内不能重复发送",phone);
             return MsgSendResultEnum.SEND_FAIL;
         }
+        //生成6位随机的验证码,存入redis中
         int code=(int)((Math.random()*9+1)*100000);
         redisTemplate.opsForValue().set(key,code,60, TimeUnit.SECONDS);
         //短信发送验证码（耗时一分钟）用异步线程处理
-        ThreadPoolManager.commonAsyncThreadPool.execute(new Runnable() {
-            @Override
-            public void run() {
-                //TODO 短信发送验证码
-                logger.info("开始发送短信，手机号：{}，验证码：{}",phone,code);
-                insertOne(phone,code);
-            }
+        ThreadPoolManager.commonAsyncThreadPool.execute(() -> {
+            //TODO 短信发送验证码
+            logger.info("开始发送短信，手机号：{}，验证码：{}",phone,code);
+            insertOne(phone,code);
         });
         return MsgSendResultEnum.SEND_SUCCESS;
     }
 
+    //校验登录验证码
     @Override
     public MsgCheckDTO checkLoginCode(String phone, Integer code) {
         if(StringUtils.isEmpty(phone)||code==null){
@@ -74,9 +75,10 @@ public class IMsgRpcServiceImpl implements IMsgRpcService {
         }
         //删除redis中的验证码
         redisTemplate.delete(key);
-        return new MsgCheckDTO(true,"验证成功");
+        return new MsgCheckDTO(true," ");
     }
 
+    //将发送的验证码存入数据库中
     @Override
     public void insertOne(String phone, Integer code) {
         SmsPO sms=new SmsPO();

@@ -1,0 +1,27 @@
+GET http://localhost:8080/User/getUserInfo?userid=1103
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2025-01-25T150951.200.json
+
+###
+
+GET http://localhost:8080/test/dubbo
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2025-01-17T205753.200.txt
+
+###
+
+GET http://localhost:8080/test/dubbo
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2025-01-17T202359.200.txt
+
+###
+
