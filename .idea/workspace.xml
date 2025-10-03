@@ -5,26 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4837df83-4849-4af5-b803-db299df046a2" name="更改" comment="v1.0">
-      <change afterPath="$PROJECT_DIR$/live-app-framework/web-starter/src/main/java/com/example/webstarter/Error/BizBaseErrorEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-framework/web-starter/src/main/java/com/example/webstarter/Error/ErrorAssert.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-framework/web-starter/src/main/java/com/example/webstarter/Error/GlobalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-framework/web-starter/src/main/java/com/example/webstarter/Error/QiyuBaseError.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-framework/web-starter/src/main/java/com/example/webstarter/Error/QiyuErrorException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-common-interface/src/main/java/org/example/live/common/interfaces/Enum/GatewayHeaderEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-gateway/src/main/java/org/example/live/gateway/filter/AccountCheckFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-gateway/src/main/java/org/example/live/gateway/properties/GatewayApplicationProperties.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/live-app-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/live-app-api/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/live-app-api/src/main/java/org/example/live/user/api/Error/ApiErrorEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-app-api/src/main/java/org/example/live/user/api/Error/ApiErrorEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/live-app-api/src/main/java/org/example/live/user/api/Service/IUserLoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-app-api/src/main/java/org/example/live/user/api/Service/IUserLoginService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/live-app-api/src/main/java/org/example/live/user/api/Service/Impl/IUserLoginServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-app-api/src/main/java/org/example/live/user/api/Service/Impl/IUserLoginServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/live-app-api/src/main/java/org/example/live/user/api/controller/UserLoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-app-api/src/main/java/org/example/live/user/api/controller/UserLoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/live-app-common-interface/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/live-app-common-interface/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/live-app-common-interface/src/main/java/org/example/live/common/interfaces/Utils/ConvertBeanUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-app-common-interface/src/main/java/org/example/live/common/interfaces/Utils/ConvertBeanUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/live-app-common-interface/src/main/java/org/example/live/common/interfaces/Vo/WebResponseVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-app-common-interface/src/main/java/org/example/live/common/interfaces/Vo/WebResponseVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/live-app-framework/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/live-app-framework/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/live-app-provide/src/main/java/org/example/live/user/provider/Service/Impl/IUserPhoneServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-app-provide/src/main/java/org/example/live/user/provider/Service/Impl/IUserPhoneServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/live-app-provide/src/main/java/org/example/live/user/provider/Service/Impl/IUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-app-provide/src/main/java/org/example/live/user/provider/Service/Impl/IUserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/live-app-provide/src/main/java/org/example/live/user/provider/Service/Impl/IUserTagServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-app-provide/src/main/java/org/example/live/user/provider/Service/Impl/IUserTagServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-app-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/live-app-gateway/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,37 +51,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;TODO_SCOPE&quot;: &quot;所有位置&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/idea/javaweb/waimai&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.29885057&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;d6ba0f2f4487b5246a6b44297fc101b1&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "TODO_SCOPE": "所有位置",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "corretto-17",
+    "last_opened_file_path": "D:/idea/javaweb/waimai",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "模块",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.29885057",
+    "settings.editor.selected.configurable": "spring.boot",
+    "spring.configuration.checksum": "d6ba0f2f4487b5246a6b44297fc101b1",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mongo&quot;,
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mongo",
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -235,7 +220,7 @@
       <workItem from="1757818371743" duration="5655000" />
       <workItem from="1757988281559" duration="2718000" />
       <workItem from="1758454587974" duration="1446000" />
-      <workItem from="1759282445345" duration="21499000" />
+      <workItem from="1759282445345" duration="26175000" />
     </task>
     <task id="LOCAL-00001" summary="v1.0">
       <option name="closed" value="true" />
@@ -280,5 +265,9 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
