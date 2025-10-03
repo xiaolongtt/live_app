@@ -1,13 +1,12 @@
 package org.example.live.user.provider.Service.Impl;
 
 import jakarta.annotation.Resource;
-import org.example.live.common.interfaces.ConvertBeanUtils;
+import org.example.live.common.interfaces.Utils.ConvertBeanUtils;
 import org.example.live.user.constants.UserTagsEnum;
 import org.example.live.user.dto.UserTagDTO;
 import org.example.live.user.provider.Service.IUserTagService;
 import org.example.live.user.provider.dao.mapper.UserTagMapper;
 import org.example.live.user.provider.dao.po.UserTagPO;
-import org.springframework.beans.BeanUtils;
 import org.springframework.dao.DataAccessException;
 import org.springframework.data.redis.connection.RedisConnection;
 import org.springframework.data.redis.core.RedisCallback;

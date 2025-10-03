@@ -2,7 +2,7 @@ package org.example.live.user.provider.Service.Impl;
 
 import jakarta.annotation.Resource;
 import org.apache.dubbo.config.annotation.DubboReference;
-import org.example.live.common.interfaces.ConvertBeanUtils;
+import org.example.live.common.interfaces.Utils.ConvertBeanUtils;
 import org.example.live.id.generate.Enum.IdTypeEnum;
 import org.example.live.id.generate.interfaces.IdBuilderRpc;
 import org.example.live.user.dto.UserDTO;

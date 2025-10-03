@@ -1,6 +1,8 @@
 package com.example.liveappaccountprovider.rpc;
 
 import com.example.liveappaccountinterface.IAccountTokenRPC;
+import com.example.liveappaccountprovider.service.AccountTokenService;
+import jakarta.annotation.Resource;
 import org.apache.dubbo.config.annotation.DubboService;
 
 /**
@@ -13,6 +15,10 @@ import org.apache.dubbo.config.annotation.DubboService;
 @DubboService
 public class AccountTokenRpcImpl implements IAccountTokenRPC {
 
+
+    @Resource
+    private AccountTokenService accountTokenService;
+
     /**
      * 创建一个登录token并且储存到redis中
      *
@@ -21,7 +27,7 @@ public class AccountTokenRpcImpl implements IAccountTokenRPC {
      */
     @Override
     public String createAndSaveLoginToken(Long userId) {
-        return null;
+        return accountTokenService.createAndSaveLoginToken(userId);
     }
 
     /**
@@ -32,6 +38,6 @@ public class AccountTokenRpcImpl implements IAccountTokenRPC {
      */
     @Override
     public Long getUserIdByToken(String tokenKey) {
-        return null;
+        return accountTokenService.getUserIdByToken(tokenKey);
     }
 }

@@ -1,8 +1,7 @@
 package org.example.live.user.provider.Service.Impl;
 
-import com.mysql.cj.Session;
 import jakarta.annotation.Resource;
-import org.example.live.common.interfaces.ConvertBeanUtils;
+import org.example.live.common.interfaces.Utils.ConvertBeanUtils;
 import org.example.live.user.dto.UserDTO;
 import org.example.live.user.provider.Service.IUserService;
 import org.example.live.user.provider.dao.mapper.UserMapper;

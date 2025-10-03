@@ -10,6 +10,8 @@
     <file url="file://$PROJECT_DIR$/live-app-framework/redis-starter/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/live-app-framework/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/live-app-framework/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/live-app-framework/web-starter/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/live-app-framework/web-starter/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/live-app-gateway/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/live-app-id-generate-interface/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/live-app-id-generate-provider/src/main/java" charset="UTF-8" />

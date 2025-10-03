@@ -1,4 +1,4 @@
-package org.example.live.common.interfaces;
+package org.example.live.common.interfaces.Utils;
 
 import org.springframework.beans.BeanInstantiationException;
 import org.springframework.beans.BeanUtils;

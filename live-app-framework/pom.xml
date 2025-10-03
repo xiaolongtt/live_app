@@ -12,5 +12,6 @@
     <url>http://maven.apache.org</url>
     <modules>
         <module>redis-starter</module>
+        <module>web-starter</module>
     </modules>
 </project>

@@ -7,4 +7,19 @@ package com.example.liveappaccountprovider.service;
  * @注释
  */
 public interface AccountTokenService {
+    /**
+     * 创建一个登录token并且储存到redis中
+     *
+     * @param userId
+     * @return
+     */
+    String createAndSaveLoginToken(Long userId);
+
+    /**
+     * 校验用户token
+     *
+     * @param tokenKey
+     * @return
+     */
+    Long getUserIdByToken(String tokenKey);
 }
