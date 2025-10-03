@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4837df83-4849-4af5-b803-db299df046a2" name="更改" comment="v1.0">
-      <change afterPath="$PROJECT_DIR$/live-app-common-interface/src/main/java/org/example/live/common/interfaces/Enum/GatewayHeaderEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-gateway/src/main/java/org/example/live/gateway/filter/AccountCheckFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-gateway/src/main/java/org/example/live/gateway/properties/GatewayApplicationProperties.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-api/src/main/java/org/example/live/user/api/controller/HomeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/live-app-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/live-app-gateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-app-gateway/src/main/java/org/example/live/gateway/filter/AccountCheckFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-app-gateway/src/main/java/org/example/live/gateway/filter/AccountCheckFilter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +18,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -220,7 +218,7 @@
       <workItem from="1757818371743" duration="5655000" />
       <workItem from="1757988281559" duration="2718000" />
       <workItem from="1758454587974" duration="1446000" />
-      <workItem from="1759282445345" duration="26175000" />
+      <workItem from="1759282445345" duration="34012000" />
     </task>
     <task id="LOCAL-00001" summary="v1.0">
       <option name="closed" value="true" />

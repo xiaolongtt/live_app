@@ -42,7 +42,8 @@ public class AccountCheckFilter implements GlobalFilter, Ordered {
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
         //获取请求的url,判断url是否在白名单中存在，如果存在就直接放行
         ServerHttpRequest request = exchange.getRequest();
-        String path = request.getURI().getPath();//获取到请求的地址
+        String path = request.getURI().getPath();//获取到请求的地址\
+        //TODO 这里会存在跨域问题，要进行修复
         if(StringUtils.isEmpty(path)){
             return Mono.empty();
         }
