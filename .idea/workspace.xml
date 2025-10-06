@@ -5,26 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4837df83-4849-4af5-b803-db299df046a2" name="更改" comment="v1.0">
-      <change afterPath="$PROJECT_DIR$/live-app-im-interface/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-im-interface/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-im-interface/src/main/java/com/example/liveappiminterface/Rpc/ImTokenRpc.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-im-interface/src/main/java/com/example/liveappiminterface/constants/AppIdEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-im-interface/src/main/java/com/example/liveappiminterface/constants/ImCodeEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-im-interface/src/main/java/com/example/liveappiminterface/constants/ImConstants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-im-interface/src/main/java/com/example/liveappiminterface/dto/ImMsgBodyDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-im-interface/src/test/java/com/example/liveappiminterface/LiveAppImInterfaceApplicationTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-im-provider/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-im-provider/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-im-provider/src/main/java/com/example/liveappimprovider/LiveAppImProviderApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-im-provider/src/main/java/com/example/liveappimprovider/Rpc/ImTokenRpcImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-im-provider/src/main/java/com/example/liveappimprovider/server/ImTokenServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-im-provider/src/main/java/com/example/liveappimprovider/server/Impl/ImTokenServerImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-im-provider/src/test/java/com/example/liveappimprovider/LiveAppImProviderApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -246,7 +227,7 @@
       <workItem from="1757988281559" duration="2718000" />
       <workItem from="1758454587974" duration="1446000" />
       <workItem from="1759282445345" duration="37973000" />
-      <workItem from="1759649594164" duration="12723000" />
+      <workItem from="1759649594164" duration="15874000" />
     </task>
     <task id="LOCAL-00001" summary="v1.0">
       <option name="closed" value="true" />

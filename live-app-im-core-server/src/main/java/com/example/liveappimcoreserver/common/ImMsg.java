@@ -1,5 +1,6 @@
 package com.example.liveappimcoreserver.common;
 
+import com.example.liveappiminterface.constants.ImConstants;
 import lombok.Data;
 
 import java.io.Serial;
@@ -24,4 +25,13 @@ public class ImMsg implements Serializable {
     private int code;
     //消息主体
     private byte[] body;
+
+    public static ImMsg build(int code, String data) {
+        ImMsg imMsg = new ImMsg();
+        imMsg.setMagic(ImConstants.DEFAULT_MAGIC_NUMBER);
+        imMsg.setCode(code);
+        imMsg.setBody(data.getBytes());
+        imMsg.setLen(imMsg.getBody().length);
+        return imMsg;
+    }
 }
