@@ -18,6 +18,9 @@
     <module>live-app-msg-interface</module>
     <module>live-app-account-interface</module>
     <module>live-app-account-provider</module>
+    <module>live-app-im-core-server</module>
+    <module>live-app-im-interface</module>
+    <module>live-app-im-provider</module>
   </modules>
   <artifactId>live-app</artifactId>
   <version>1.0-SNAPSHOT</version>
@@ -32,6 +35,7 @@
     <maven.compiler.target>17</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <springboot.version>3.0.4</springboot.version>
+    <alibaba-fastjson.version>2.0.10</alibaba-fastjson.version>
   </properties>
 
   <parent>
