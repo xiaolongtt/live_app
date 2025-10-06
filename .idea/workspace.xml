@@ -22,7 +22,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/live-app-im-interface" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="jar://$USER_HOME$/.jdks/corretto-17.0.15/lib/src.zip!/java.base/java/lang/String.java" root0="SKIP_INSPECTION" />
@@ -227,7 +227,7 @@
       <workItem from="1757988281559" duration="2718000" />
       <workItem from="1758454587974" duration="1446000" />
       <workItem from="1759282445345" duration="37973000" />
-      <workItem from="1759649594164" duration="15874000" />
+      <workItem from="1759649594164" duration="26568000" />
     </task>
     <task id="LOCAL-00001" summary="v1.0">
       <option name="closed" value="true" />

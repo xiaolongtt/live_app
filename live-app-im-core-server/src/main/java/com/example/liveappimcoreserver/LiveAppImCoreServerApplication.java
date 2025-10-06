@@ -9,8 +9,10 @@ import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
+import jakarta.annotation.Resource;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
 
 
 /**
@@ -18,6 +20,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 @SpringBootApplication
 public class LiveAppImCoreServerApplication {
+
+    @Resource
+    private ApplicationContext applicationContext;
+
     //定义服务端口
     private int port;
 
@@ -43,10 +49,10 @@ public class LiveAppImCoreServerApplication {
             @Override
             protected void initChannel(Channel channel) throws Exception {
                 //添加编码器和解码器
-                channel.pipeline().addLast(new ImMsgEncoder());
-                channel.pipeline().addLast(new ImMsgDecoder());
+                channel.pipeline().addLast(applicationContext.getBean(ImMsgEncoder.class));
+                channel.pipeline().addLast(applicationContext.getBean(ImMsgDecoder.class));
                 //添加自定义的消息处理器
-                channel.pipeline().addLast(new ImCoreServerHandler());
+                channel.pipeline().addLast(applicationContext.getBean(ImCoreServerHandler.class));
                 System.out.println("initChannel");
             }
         });
