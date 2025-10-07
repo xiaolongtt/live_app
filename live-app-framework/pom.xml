@@ -13,5 +13,6 @@
     <modules>
         <module>redis-starter</module>
         <module>web-starter</module>
+        <module>mq-starter</module>
     </modules>
 </project>
