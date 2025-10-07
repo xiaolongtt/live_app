@@ -1,0 +1,3 @@
+org.example.mq.starter.properties.RocketMQConsumerProperties
+org.example.mq.starter.properties.RocketMQProducerProperties
+org.example.mq.starter.producer.RocketMQProducerConfig

@@ -1,11 +1,17 @@
 package com.example.liveappimcoreserver.handler.Impl;
 
-import com.alibaba.fastjson.JSON;
 import com.example.liveappimcoreserver.common.ImContextUtils;
 import com.example.liveappimcoreserver.common.ImMsg;
 import com.example.liveappimcoreserver.handler.SimpleHandler;
-import com.example.liveappiminterface.dto.ImMsgBodyDto;
 import io.netty.channel.ChannelHandlerContext;
+import jakarta.annotation.Resource;
+import org.apache.rocketmq.client.exception.MQBrokerException;
+import org.apache.rocketmq.client.exception.MQClientException;
+import org.apache.rocketmq.client.producer.MQProducer;
+import org.apache.rocketmq.client.producer.SendResult;
+import org.apache.rocketmq.common.message.Message;
+import org.apache.rocketmq.remoting.exception.RemotingException;
+import org.example.live.common.interfaces.Topic.ImCoreServerProviderTopicNames;
 import org.springframework.stereotype.Component;
 
 /**
@@ -16,6 +22,9 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class ImSimpleMsgHandlerImpl implements SimpleHandler {
+
+    @Resource
+    private MQProducer mqProducer;
     @Override
     public void handle(ChannelHandlerContext ctx, ImMsg imMsg) {
         //先进行基本的验证
@@ -32,6 +41,14 @@ public class ImSimpleMsgHandlerImpl implements SimpleHandler {
             throw new IllegalArgumentException("body is null");
         }
         //要使用mq将消息传递给下游
+        Message message=new Message();
+        message.setBody(body);
+        message.setTopic(ImCoreServerProviderTopicNames.LIVE_APP_IM_BIZ_MSG_TOPIC);
+        try {
+            mqProducer.send(message);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
 
     }
 }
