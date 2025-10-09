@@ -32,7 +32,7 @@ public class ImMsgBodyDto implements Serializable {
      */
     private String token;
     /**
-     * 业务类型标识
+     * 业务类型标识，主要确定传输的数据的作用
      */
     private int bizCode;
     /**

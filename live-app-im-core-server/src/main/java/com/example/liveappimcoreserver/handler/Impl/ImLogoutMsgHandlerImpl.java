@@ -5,8 +5,12 @@ import com.example.liveappimcoreserver.common.ChannelHandlerContextCache;
 import com.example.liveappimcoreserver.common.ImContextUtils;
 import com.example.liveappimcoreserver.common.ImMsg;
 import com.example.liveappimcoreserver.handler.SimpleHandler;
+import com.example.liveappimcoreserverinterface.constants.ImCoreServerConstants;
+import com.example.liveappiminterface.constants.ImCodeEnum;
 import com.example.liveappiminterface.dto.ImMsgBodyDto;
 import io.netty.channel.ChannelHandlerContext;
+import jakarta.annotation.Resource;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Component;
 
 /**
@@ -17,15 +21,31 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class ImLogoutMsgHandlerImpl implements SimpleHandler {
+
+    @Resource
+    private StringRedisTemplate stringRedisTemplate;
+
     @Override
     public void handle(ChannelHandlerContext ctx, ImMsg imMsg) {
         //从channel中获取userId
-        Long userId= ImContextUtils.getUserId(ctx);
-        if(userId==null){
-            throw new IllegalArgumentException("userId is null");
+        Long userId = ImContextUtils.getUserId(ctx);
+        Integer appId = ImContextUtils.getAppId(ctx);
+        if (userId == null || appId == null) {
+            ctx.close();
+            throw new IllegalArgumentException("attr is error");
         }
+        ImMsgBodyDto imMsgBodyDto=new ImMsgBodyDto();
+        imMsgBodyDto.setUserId(userId);
+        imMsgBodyDto.setAppId(appId);
+        imMsgBodyDto.setData("success");
+        ImMsg imMsgResp=ImMsg.build(ImCodeEnum.IM_LOGOUT.getCode(), JSON.toJSONString(imMsgBodyDto));
+        ctx.writeAndFlush(imMsgResp);
         //将channel与userId从缓存中移除
         ChannelHandlerContextCache.remove(userId);
+        //将userID与服务器ip的对应关系删除
+        stringRedisTemplate.delete(ImCoreServerConstants.IM_BIND_IP_KEY+userId+appId);
+        ImContextUtils.removeUserId(ctx);
+        ImContextUtils.removeAppId(ctx);
         ctx.close();
     }
 }

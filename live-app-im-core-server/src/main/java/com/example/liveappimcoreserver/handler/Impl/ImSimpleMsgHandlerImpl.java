@@ -5,12 +5,8 @@ import com.example.liveappimcoreserver.common.ImMsg;
 import com.example.liveappimcoreserver.handler.SimpleHandler;
 import io.netty.channel.ChannelHandlerContext;
 import jakarta.annotation.Resource;
-import org.apache.rocketmq.client.exception.MQBrokerException;
-import org.apache.rocketmq.client.exception.MQClientException;
 import org.apache.rocketmq.client.producer.MQProducer;
-import org.apache.rocketmq.client.producer.SendResult;
 import org.apache.rocketmq.common.message.Message;
-import org.apache.rocketmq.remoting.exception.RemotingException;
 import org.example.live.common.interfaces.Topic.ImCoreServerProviderTopicNames;
 import org.springframework.stereotype.Component;
 
@@ -40,7 +36,7 @@ public class ImSimpleMsgHandlerImpl implements SimpleHandler {
             ctx.close();
             throw new IllegalArgumentException("body is null");
         }
-        //要使用mq将消息传递给下游
+        //要使用mq将消息传递给下游，也就是msg模块中，从队列中拿到数据去处理
         Message message=new Message();
         message.setBody(body);
         message.setTopic(ImCoreServerProviderTopicNames.LIVE_APP_IM_BIZ_MSG_TOPIC);

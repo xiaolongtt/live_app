@@ -3,11 +3,14 @@ package com.example.liveappimcoreserver.handler.Impl;
 import com.alibaba.fastjson.JSON;
 import com.example.liveappimcoreserver.common.ImMsg;
 import com.example.liveappimcoreserver.handler.SimpleHandler;
+import com.example.liveappimcoreserverinterface.constants.ImCoreServerConstants;
 import com.example.liveappiminterface.constants.ImCodeEnum;
 import com.example.liveappiminterface.constants.ImConstants;
 import com.example.liveappiminterface.dto.ImMsgBodyDto;
 import io.netty.channel.ChannelHandlerContext;
+import jakarta.annotation.Resource;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Component;
 
 import java.util.concurrent.TimeUnit;
@@ -21,7 +24,11 @@ import java.util.concurrent.TimeUnit;
 @Component
 public class ImHeartBeatMsgHandlerImpl implements SimpleHandler {
 
+    @Resource
     private RedisTemplate<String,Object> redisTemplate;
+
+    @Resource
+    private StringRedisTemplate stringRedisTemplate;
     @Override
     public void handle(ChannelHandlerContext ctx, ImMsg imMsg) {
         //先对心跳包进行基本验证
@@ -48,6 +55,8 @@ public class ImHeartBeatMsgHandlerImpl implements SimpleHandler {
         this.recordHeartBeat(userId,redisKey);
         this.removeExpirerRecord(redisKey);
         redisTemplate.expire(redisKey,5, TimeUnit.MINUTES);
+        //同时要更新用户id与服务器ip的对应时间
+        stringRedisTemplate.expire(ImCoreServerConstants.IM_BIND_IP_KEY+userId+appId,5, TimeUnit.MINUTES);
         //返回数据包给客户端
         ImMsgBodyDto respImMsgBodyDto=new ImMsgBodyDto();
         respImMsgBodyDto.setUserId(userId);

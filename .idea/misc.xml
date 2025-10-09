@@ -8,6 +8,7 @@
         <option value="$PROJECT_DIR$/live-app-account-interface/pom.xml" />
         <option value="$PROJECT_DIR$/live-app-account-provider/pom.xml" />
         <option value="$PROJECT_DIR$/live-app-im-provider/pom.xml" />
+        <option value="$PROJECT_DIR$/live-app-im-core-server-interface/pom.xml" />
       </list>
     </option>
   </component>

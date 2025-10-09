@@ -21,6 +21,9 @@
     <module>live-app-im-core-server</module>
     <module>live-app-im-interface</module>
     <module>live-app-im-provider</module>
+    <module>live-app-im-core-server-interface</module>
+    <module>live-app-im-router-interface</module>
+    <module>live-app-im-router-provider</module>
   </modules>
   <artifactId>live-app</artifactId>
   <version>1.0-SNAPSHOT</version>

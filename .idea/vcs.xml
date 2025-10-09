@@ -7,6 +7,7 @@
     <mapping directory="$PROJECT_DIR$/live-app-framework/mq-starter" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/live-app-framework/web-starter" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/live-app-im-core-server" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/live-app-im-core-server-interface" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/live-app-im-interface" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/live-app-im-provider" vcs="Git" />
   </component>

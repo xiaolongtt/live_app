@@ -12,7 +12,24 @@ import java.util.concurrent.ConcurrentHashMap;
  * @注释 用一个map来缓存用户id与channel的映射关系
  */
 public class ChannelHandlerContextCache {
-    private static final Map<Long, ChannelHandlerContext> channelHandlerContextMap = new ConcurrentHashMap<>();
+
+    /**
+     * 缓存服务器的ip地址
+     */
+    private static  String SERVER_IP_ADDRESS = "SERVER_IP_ADDRESS";
+
+    public static String getServerIpAddress() {
+        return SERVER_IP_ADDRESS;
+    }
+
+    public static void setServerIpAddress(String serverIpAddress) {
+        SERVER_IP_ADDRESS = serverIpAddress;
+    }
+
+    /**
+     * 缓存用户id与channel的映射关系
+     */
+    private static Map<Long, ChannelHandlerContext> channelHandlerContextMap = new ConcurrentHashMap<>();
     public static ChannelHandlerContext get(long userid){
         return channelHandlerContextMap.get(userid);
     }

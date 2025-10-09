@@ -26,6 +26,14 @@ public class ImContextUtils {
     public static void setUserId(Long userId,ChannelHandlerContext ctx){
         ctx.attr(ImContextAttr.USER_ID).set(userId);
     }
+    /**
+     * 移除对应的userId
+     * @param ctx
+     */
+    public static void removeUserId(ChannelHandlerContext ctx){
+        ctx.attr(ImContextAttr.USER_ID).set(null);
+    }
+
 
     /**
      * 根据不同的channel获取到对应的id
@@ -43,5 +51,12 @@ public class ImContextUtils {
      */
     public static void setAppId(Integer appid,ChannelHandlerContext ctx){
         ctx.attr(ImContextAttr.APP_ID).set(appid);
+    }
+    /**
+     * 移除对应的appId
+     * @param ctx
+     */
+    public static void removeAppId(ChannelHandlerContext ctx){
+        ctx.attr(ImContextAttr.APP_ID).set(null);
     }
 }

@@ -17,12 +17,16 @@
     <file url="file://$PROJECT_DIR$/live-app-gateway/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/live-app-id-generate-interface/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/live-app-id-generate-provider/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/live-app-im-core-server-interface/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/live-app-im-core-server-interface/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/live-app-im-core-server/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/live-app-im-core-server/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/live-app-im-interface/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/live-app-im-interface/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/live-app-im-provider/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/live-app-im-provider/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/live-app-im-router-interface/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/live-app-im-router-provider/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/live-app-interface/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/live-app-interface/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/live-app-msg-interface/src/main/java" charset="UTF-8" />
