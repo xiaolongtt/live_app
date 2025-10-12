@@ -24,6 +24,8 @@
     <module>live-app-im-core-server-interface</module>
     <module>live-app-im-router-interface</module>
     <module>live-app-im-router-provider</module>
+    <module>live-app-live-interface</module>
+    <module>live-app-live-provider</module>
   </modules>
   <artifactId>live-app</artifactId>
   <version>1.0-SNAPSHOT</version>
@@ -33,6 +35,7 @@
   <properties>
     <spring-cloud-bootstrap.version>3.0.2</spring-cloud-bootstrap.version>
     <qiyu-mysql.version>8.0.28</qiyu-mysql.version>
+    <dubbo.version>3.2.0-beta.3</dubbo.version>
     <mybatis-plus.version>3.5.3</mybatis-plus.version>
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>

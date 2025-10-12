@@ -10,4 +10,6 @@ import com.example.liveappiminterface.dto.ImMsgBodyDto;
  */
 public interface ImRouterHandlerServer {
     void onReceive(ImMsgBodyDto imMsgBodyDto);
+
+    boolean sendMsgToClient(ImMsgBodyDto imMsgBodyDto);
 }

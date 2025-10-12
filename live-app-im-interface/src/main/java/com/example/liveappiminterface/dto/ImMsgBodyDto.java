@@ -16,7 +16,7 @@ public class ImMsgBodyDto implements Serializable {
     @Serial
     private static final long serialVersionUID = -1197285566966086252L;
     /**
-     * 唯一的消息id标识
+     * 唯一的消息id标识，主要用来消息确认
      */
     private String msgId;
     /**

@@ -10,7 +10,8 @@ public enum ImCodeEnum {
     IM_LOGIN(1001,"登录消息包"),
     IM_LOGOUT(1002,"登出消息包"),
     IM_MSG_BODY(1003,"业务消息包"),
-    IM_HEARTBEAT(1004,"心跳消息包");
+    IM_HEARTBEAT(1004,"心跳消息包"),
+    IM_ACK_MSG(1005,"确认消息包");
     private int code;
     private String dsc;
 

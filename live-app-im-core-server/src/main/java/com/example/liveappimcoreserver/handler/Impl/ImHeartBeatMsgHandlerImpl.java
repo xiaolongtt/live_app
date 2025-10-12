@@ -23,10 +23,8 @@ import java.util.concurrent.TimeUnit;
  */
 @Component
 public class ImHeartBeatMsgHandlerImpl implements SimpleHandler {
-
     @Resource
     private RedisTemplate<String,Object> redisTemplate;
-
     @Resource
     private StringRedisTemplate stringRedisTemplate;
     @Override

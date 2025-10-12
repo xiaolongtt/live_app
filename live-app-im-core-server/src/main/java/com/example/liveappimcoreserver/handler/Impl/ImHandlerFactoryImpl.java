@@ -42,5 +42,6 @@ public class ImHandlerFactoryImpl implements ImHandlerFactory , InitializingBean
         handlerMap.put(ImCodeEnum.IM_LOGOUT.getCode(), applicationContext.getBean(ImLogoutMsgHandlerImpl.class));
         handlerMap.put(ImCodeEnum.IM_MSG_BODY.getCode(), applicationContext.getBean(ImSimpleMsgHandlerImpl.class));
         handlerMap.put(ImCodeEnum.IM_HEARTBEAT.getCode(), applicationContext.getBean(ImHeartBeatMsgHandlerImpl.class));
+        handlerMap.put(ImCodeEnum.IM_ACK_MSG.getCode(), applicationContext.getBean(AckImMsgHandlerImpl.class));
     }
 }

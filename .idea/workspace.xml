@@ -5,35 +5,48 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4837df83-4849-4af5-b803-db299df046a2" name="更改" comment="v1.0">
-      <change afterPath="$PROJECT_DIR$/live-app-im-core-server-interface/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-im-core-server-interface/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-im-core-server-interface/src/main/java/com/example/liveappimcoreserverinterface/constants/ImCoreServerConstants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-im-router-interface/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-im-router-interface/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-im-router-interface/src/main/java/com/example/liveappimrouterinterface/Rpc/ImRouterRpc.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-im-router-interface/src/main/resources/META-INF/maven/archetype.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-im-router-interface/src/main/resources/archetype-resources/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-im-router-interface/src/main/resources/archetype-resources/src/main/java/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-im-router-interface/src/main/resources/archetype-resources/src/test/java/AppTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-im-router-provider/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-im-router-provider/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-im-router-provider/src/main/java/com/example/liveappimrouterprovider/ImRouterProviderApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-im-router-provider/src/main/java/com/example/liveappimrouterprovider/Rpc/ImRouterRpcImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-im-router-provider/src/main/java/com/example/liveappimrouterprovider/cluster/ImRouterCluster.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-im-router-provider/src/main/java/com/example/liveappimrouterprovider/cluster/ImRouterClusterInvoker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-im-router-provider/src/main/java/com/example/liveappimrouterprovider/server/ImRouterService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-im-router-provider/src/main/java/com/example/liveappimrouterprovider/server/Impl/ImRouterServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-im-router-provider/src/main/resources/META-INF/dubbo/internal/org.apache.dubbo.rpc.cluster.Cluster" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-im-router-provider/src/main/resources/bootstrap.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-msg-interface/src/main/java/org/example/live/msg/constants/ImMsgBizCodeEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-msg-provider/src/main/java/org/example/live/msg/provicer/Consumer/ImMsgConsumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-msg-provider/src/main/java/org/example/live/msg/provicer/Consumer/handler/Impl/MessageHandlerImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-msg-provider/src/main/java/org/example/live/msg/provicer/Consumer/handler/MessageHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/mybatisx/templates.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-api/src/main/java/org/example/live/user/api/Service/ILivingRoomService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-api/src/main/java/org/example/live/user/api/Service/Impl/ILivingRoomServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-api/src/main/java/org/example/live/user/api/Vo/LivingRoomInitVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-api/src/main/java/org/example/live/user/api/Vo/Req/LivingRoomReqVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-api/src/main/java/org/example/live/user/api/Vo/Resp/LivingRoomPageRespVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-api/src/main/java/org/example/live/user/api/Vo/Resp/LivingRoomRespVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-api/src/main/java/org/example/live/user/api/controller/LivingRoomController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-common-interface/src/main/java/org/example/live/common/interfaces/Enum/CommonStatusEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-common-interface/src/main/java/org/example/live/common/interfaces/Utils/PageWrapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-live-interface/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-live-interface/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-live-interface/src/main/java/org/example/living/constants/LivingRoomRedisKey.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-live-interface/src/main/java/org/example/living/constants/LivingRoomTypeEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-live-interface/src/main/java/org/example/living/dto/LivingPkRespDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-live-interface/src/main/java/org/example/living/dto/LivingRoomReqDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-live-interface/src/main/java/org/example/living/dto/LivingRoomRespDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-live-interface/src/main/java/org/example/living/interfaces/ILivingRoomRpc.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-live-interface/src/main/resources/META-INF/maven/archetype.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-live-interface/src/main/resources/archetype-resources/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-live-interface/src/main/resources/archetype-resources/src/main/java/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-live-interface/src/main/resources/archetype-resources/src/test/java/AppTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-live-provider/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-live-provider/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-live-provider/src/main/java/org/example/living/provider/Config/RefreshLivingRoomListJob.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-live-provider/src/main/java/org/example/living/provider/Dao/Mapper/LivingRoomMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-live-provider/src/main/java/org/example/living/provider/Dao/Mapper/LivingRoomRecordMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-live-provider/src/main/java/org/example/living/provider/Dao/Po/LivingRoomPO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-live-provider/src/main/java/org/example/living/provider/Dao/Po/LivingRoomRecordPO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-live-provider/src/main/java/org/example/living/provider/Rpc/livingRoomRpcImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-live-provider/src/main/java/org/example/living/provider/Service/ILivingRoomRecordService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-live-provider/src/main/java/org/example/living/provider/Service/ILivingRoomService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-live-provider/src/main/java/org/example/living/provider/Service/impl/livingRoomRecordServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-live-provider/src/main/java/org/example/living/provider/Service/impl/livingRoomServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-live-provider/src/main/resources/META-INF/maven/archetype.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-live-provider/src/main/resources/archetype-resources/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-live-provider/src/main/resources/archetype-resources/src/main/java/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-live-provider/src/main/resources/archetype-resources/src/test/java/AppTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/42f462aa-479a-47c2-9de9-b0d6c48e82f3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/42f462aa-479a-47c2-9de9-b0d6c48e82f3.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/live-app-msg-provider/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/live-app-msg-provider/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-app-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/live-app-api/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,6 +65,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="jar://$USER_HOME$/.jdks/corretto-17.0.15/lib/src.zip!/java.base/java/lang/String.java" root0="SKIP_INSPECTION" />
@@ -84,6 +98,7 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "TODO_SCOPE": "所有位置",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "corretto-17",
@@ -97,7 +112,7 @@
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.29885057",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
     "spring.configuration.checksum": "56bfddbc92942c5117ced89710812e07",
     "vue.rearranger.settings.migration": "true"
   },
@@ -261,7 +276,7 @@
       <workItem from="1757988281559" duration="2718000" />
       <workItem from="1758454587974" duration="1446000" />
       <workItem from="1759282445345" duration="37973000" />
-      <workItem from="1759649594164" duration="60366000" />
+      <workItem from="1759649594164" duration="99044000" />
     </task>
     <task id="LOCAL-00001" summary="v1.0">
       <option name="closed" value="true" />
@@ -298,7 +313,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/live-app-interface/src/main/java/org/example/live/user/interfaces/IUserPhoneRpc.java</url>
           <line>19</line>
-          <properties class="org.example.live.user.interfaces.IUserPhoneRpc" method="login">
+          <properties class="org.example.live.user.interfaces.IUserPhoneRpc">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>

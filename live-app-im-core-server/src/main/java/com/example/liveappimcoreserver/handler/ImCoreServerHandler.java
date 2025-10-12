@@ -1,10 +1,14 @@
 package com.example.liveappimcoreserver.handler;
 
+import com.example.liveappimcoreserver.common.ChannelHandlerContextCache;
+import com.example.liveappimcoreserver.common.ImContextUtils;
 import com.example.liveappimcoreserver.common.ImMsg;
 import com.example.liveappimcoreserver.handler.Impl.ImHandlerFactoryImpl;
+import com.example.liveappimcoreserverinterface.constants.ImCoreServerConstants;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import jakarta.annotation.Resource;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
 
 /**
@@ -16,6 +20,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class ImCoreServerHandler extends SimpleChannelInboundHandler {
 
+    @Resource
+    private RedisTemplate<String,Object> redisTemplate;
     @Resource
     private ImHandlerFactoryImpl imHandlerFactory;
     @Override
@@ -34,6 +40,13 @@ public class ImCoreServerHandler extends SimpleChannelInboundHandler {
      */
     @Override
     public void channelInactive(ChannelHandlerContext ctx) throws Exception {
-        super.channelInactive(ctx);
+        Long userId = ImContextUtils.getUserId(ctx);
+        Integer appId = ImContextUtils.getAppId(ctx);
+        if(userId!=null && appId!=null){
+            //将用户与服务器ip绑定关系删除
+            redisTemplate.delete(ImCoreServerConstants.IM_BIND_IP_KEY + appId + userId);
+            //将用户与通道的关系删除
+            ChannelHandlerContextCache.remove(userId);
+        }
     }
 }

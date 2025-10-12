@@ -13,4 +13,8 @@ public class ImCoreServerConstants {
      * 作为用户id与服务器ip地址的缓存key
      */
     public static final String IM_BIND_IP_KEY = "im:bind:ip:";
+     /**
+      * 作为消息确认的缓存key
+      */
+    public static final String IM_MSG_ACK_KEY = "im:msg:ack:";
 }

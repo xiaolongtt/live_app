@@ -10,5 +10,10 @@ import io.netty.channel.ChannelHandlerContext;
  * @注释
  */
 public interface ImHandlerFactory {
+    /**
+     * 根据消息码创建对应的处理器，使用map来存储不同的处理类，根据code来分发不同的处理类
+     * @param ctx
+     * @param imMsg
+     */
     void createHandler(ChannelHandlerContext ctx, ImMsg imMsg);
 }
