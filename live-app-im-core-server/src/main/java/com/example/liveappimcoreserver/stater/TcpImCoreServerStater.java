@@ -3,7 +3,7 @@ package com.example.liveappimcoreserver.stater;
 import com.example.liveappimcoreserver.common.ChannelHandlerContextCache;
 import com.example.liveappimcoreserver.common.ImMsgDecoder;
 import com.example.liveappimcoreserver.common.ImMsgEncoder;
-import com.example.liveappimcoreserver.handler.ImCoreServerHandler;
+import com.example.liveappimcoreserver.handler.Tcp.TcpImCoreServerHandler;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;
@@ -23,7 +23,7 @@ import org.springframework.util.StringUtils;
  * @Date 2025/10/9 15:59
  * @注释 IM核心服务端启动器
  */
-public class ImCoreServerStater implements InitializingBean {
+public class TcpImCoreServerStater implements InitializingBean {
 
     //定义服务端口
     @Value("${qiyu.im.ws.port}")
@@ -50,7 +50,7 @@ public class ImCoreServerStater implements InitializingBean {
                 channel.pipeline().addLast(applicationContext.getBean(ImMsgEncoder.class));
                 channel.pipeline().addLast(applicationContext.getBean(ImMsgDecoder.class));
                 //添加自定义的消息处理器
-                channel.pipeline().addLast(applicationContext.getBean(ImCoreServerHandler.class));
+                channel.pipeline().addLast(applicationContext.getBean(TcpImCoreServerHandler.class));
                 System.out.println("initChannel");
             }
         });

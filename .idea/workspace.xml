@@ -5,49 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4837df83-4849-4af5-b803-db299df046a2" name="更改" comment="v1.0">
-      <change afterPath="$PROJECT_DIR$/.idea/mybatisx/templates.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-api/src/main/java/org/example/live/user/api/Service/ILivingRoomService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-api/src/main/java/org/example/live/user/api/Service/Impl/ILivingRoomServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-api/src/main/java/org/example/live/user/api/Vo/LivingRoomInitVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-api/src/main/java/org/example/live/user/api/Vo/Req/LivingRoomReqVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-api/src/main/java/org/example/live/user/api/Vo/Resp/LivingRoomPageRespVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-api/src/main/java/org/example/live/user/api/Vo/Resp/LivingRoomRespVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-api/src/main/java/org/example/live/user/api/controller/LivingRoomController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-common-interface/src/main/java/org/example/live/common/interfaces/Enum/CommonStatusEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-common-interface/src/main/java/org/example/live/common/interfaces/Utils/PageWrapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-live-interface/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-live-interface/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-live-interface/src/main/java/org/example/living/constants/LivingRoomRedisKey.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-live-interface/src/main/java/org/example/living/constants/LivingRoomTypeEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-live-interface/src/main/java/org/example/living/dto/LivingPkRespDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-live-interface/src/main/java/org/example/living/dto/LivingRoomReqDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-live-interface/src/main/java/org/example/living/dto/LivingRoomRespDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-live-interface/src/main/java/org/example/living/interfaces/ILivingRoomRpc.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-live-interface/src/main/resources/META-INF/maven/archetype.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-live-interface/src/main/resources/archetype-resources/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-live-interface/src/main/resources/archetype-resources/src/main/java/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-live-interface/src/main/resources/archetype-resources/src/test/java/AppTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-live-provider/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-live-provider/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-live-provider/src/main/java/org/example/living/provider/Config/RefreshLivingRoomListJob.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-live-provider/src/main/java/org/example/living/provider/Dao/Mapper/LivingRoomMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-live-provider/src/main/java/org/example/living/provider/Dao/Mapper/LivingRoomRecordMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-live-provider/src/main/java/org/example/living/provider/Dao/Po/LivingRoomPO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-live-provider/src/main/java/org/example/living/provider/Dao/Po/LivingRoomRecordPO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-live-provider/src/main/java/org/example/living/provider/Rpc/livingRoomRpcImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-live-provider/src/main/java/org/example/living/provider/Service/ILivingRoomRecordService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-live-provider/src/main/java/org/example/living/provider/Service/ILivingRoomService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-live-provider/src/main/java/org/example/living/provider/Service/impl/livingRoomRecordServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-live-provider/src/main/java/org/example/living/provider/Service/impl/livingRoomServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-live-provider/src/main/resources/META-INF/maven/archetype.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-live-provider/src/main/resources/archetype-resources/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-live-provider/src/main/resources/archetype-resources/src/main/java/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-live-provider/src/main/resources/archetype-resources/src/test/java/AppTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-api/src/main/java/org/example/live/user/api/Service/ImServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-api/src/main/java/org/example/live/user/api/Service/Impl/ImServerImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-api/src/main/java/org/example/live/user/api/Vo/Resp/ImConfigVo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-api/src/main/java/org/example/live/user/api/controller/ImController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/42f462aa-479a-47c2-9de9-b0d6c48e82f3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/42f462aa-479a-47c2-9de9-b0d6c48e82f3.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/live-app-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/live-app-api/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-app-api/src/main/java/org/example/live/user/api/Service/Impl/ILivingRoomServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-app-api/src/main/java/org/example/live/user/api/Service/Impl/ILivingRoomServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-app-api/src/main/java/org/example/live/user/api/controller/LivingRoomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-app-api/src/main/java/org/example/live/user/api/controller/LivingRoomController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-app-live-provider/src/main/java/org/example/living/provider/Config/RefreshLivingRoomListJob.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-app-live-provider/src/main/java/org/example/living/provider/Config/RefreshLivingRoomListJob.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-app-live-provider/src/main/java/org/example/living/provider/Service/impl/livingRoomServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-app-live-provider/src/main/java/org/example/living/provider/Service/impl/livingRoomServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,8 +25,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -90,39 +58,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "TODO_SCOPE": "所有位置",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "corretto-17",
-    "last_opened_file_path": "D:/idea/live-app/live-app-framework/mq-starter/src/main/resources/META-INF/spring",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "模块",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.29885057",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "spring.configuration.checksum": "56bfddbc92942c5117ced89710812e07",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;TODO_SCOPE&quot;: &quot;所有位置&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/idea/live-app/live-app-framework/mq-starter/src/main/resources/META-INF/spring&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.29885057&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;89212f41149eba0544bc8b030e32bb1b&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mongo",
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mongo&quot;,
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -276,7 +244,12 @@
       <workItem from="1757988281559" duration="2718000" />
       <workItem from="1758454587974" duration="1446000" />
       <workItem from="1759282445345" duration="37973000" />
-      <workItem from="1759649594164" duration="99044000" />
+      <workItem from="1759649594164" duration="99676000" />
+      <workItem from="1760282981473" duration="101000" />
+      <workItem from="1760283092979" duration="186000" />
+      <workItem from="1760324062505" duration="60000" />
+      <workItem from="1760324136296" duration="41000" />
+      <workItem from="1760324369447" duration="11106000" />
     </task>
     <task id="LOCAL-00001" summary="v1.0">
       <option name="closed" value="true" />

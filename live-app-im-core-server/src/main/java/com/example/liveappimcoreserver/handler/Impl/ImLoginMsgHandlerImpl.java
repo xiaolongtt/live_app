@@ -55,24 +55,36 @@ public class ImLoginMsgHandlerImpl implements SimpleHandler {
         Long userIdByToken = imTokenRpc.getUserIdByToken(token);
         //先校验token是否正确，然后给客户端返回登录成功的消息
         if(userIdByToken!=null && userIdByToken.equals(imMsgBodyDto.getUserId())){
-            //将channel与userId关联起来
-            ChannelHandlerContextCache.put(userIdByToken,ctx);
-            //给channel绑定上对应的id
-            ImContextUtils.setUserId(userIdByToken,ctx);
-            ImContextUtils.setAppId(appId,ctx);
-            //将信息返回给客户端
-            ImMsgBodyDto imLoginSuccessBodyDto=new ImMsgBodyDto();
-            imLoginSuccessBodyDto.setMsgId(imMsgBodyDto.getMsgId());
-            imLoginSuccessBodyDto.setAppId(AppIdEnum.LIVE_BIZ.getCode());
-            imLoginSuccessBodyDto.setData("success");
-            ImMsg RespimMsg = ImMsg.build(ImCodeEnum.IM_LOGIN.getCode(), JSON.toJSONString(imLoginSuccessBodyDto));
-            //用户登录成功后将用户id与对应的服务器ip地址缓存下来，过期时间为心跳时间的两倍，在每次收到心跳包以后要更新时间，userid的生成使用一个定量类的属性
-            stringRedisTemplate.opsForValue().set(ImCoreServerConstants.IM_BIND_IP_KEY+userId+appId,
-                    ChannelHandlerContextCache.getServerIpAddress(),
-                    ImConstants.DEFAULT_HEART_BEAT_TIME*2, TimeUnit.SECONDS);
-            ctx.writeAndFlush(RespimMsg);
+            loginSuccessHandler(ctx,userId,appId);
+            return ;
         }
         ctx.close();
         throw new IllegalArgumentException("token is not valid");
     }
+
+    /**
+     * 将登录成功单独抽离出来，供外界使用
+     * @param ctx
+     * @param userId
+     * @param appId
+     */
+    public void loginSuccessHandler(ChannelHandlerContext ctx,Long userId,int appId){
+        //将channel与userId关联起来
+        ChannelHandlerContextCache.put(userId,ctx);
+        //给channel绑定上对应的id
+        ImContextUtils.setUserId(userId,ctx);
+        ImContextUtils.setAppId(appId,ctx);
+        //将信息返回给客户端
+        ImMsgBodyDto imLoginSuccessBodyDto=new ImMsgBodyDto();
+        imLoginSuccessBodyDto.setAppId(AppIdEnum.LIVE_BIZ.getCode());
+        imLoginSuccessBodyDto.setUserId(userId);
+        imLoginSuccessBodyDto.setData("success");
+        ImMsg RespimMsg = ImMsg.build(ImCodeEnum.IM_LOGIN.getCode(), JSON.toJSONString(imLoginSuccessBodyDto));
+        //用户登录成功后将用户id与对应的服务器ip地址缓存下来，过期时间为心跳时间的两倍，在每次收到心跳包以后要更新时间，userid的生成使用一个定量类的属性
+        stringRedisTemplate.opsForValue().set(ImCoreServerConstants.IM_BIND_IP_KEY+userId+appId,
+                ChannelHandlerContextCache.getServerIpAddress(),
+                ImConstants.DEFAULT_HEART_BEAT_TIME*2, TimeUnit.SECONDS);
+        ctx.writeAndFlush(RespimMsg);
+    }
+
 }

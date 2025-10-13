@@ -1,4 +1,4 @@
-package com.example.liveappimcoreserver.handler;
+package com.example.liveappimcoreserver.handler.Tcp;
 
 import com.example.liveappimcoreserver.common.ChannelHandlerContextCache;
 import com.example.liveappimcoreserver.common.ImContextUtils;
@@ -18,7 +18,7 @@ import org.springframework.stereotype.Component;
  * @注释 IM消息核心处理类，主要是根据消息的code字段进行路由到不同的处理方法
  */
 @Component
-public class ImCoreServerHandler extends SimpleChannelInboundHandler {
+public class TcpImCoreServerHandler extends SimpleChannelInboundHandler {
 
     @Resource
     private RedisTemplate<String,Object> redisTemplate;

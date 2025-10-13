@@ -5,11 +5,14 @@ import com.example.liveappimcoreserver.common.ChannelHandlerContextCache;
 import com.example.liveappimcoreserver.common.ImContextUtils;
 import com.example.liveappimcoreserver.common.ImMsg;
 import com.example.liveappimcoreserver.handler.SimpleHandler;
+import com.example.liveappimcoreserver.handler.Ws.WsSharkHandler;
 import com.example.liveappimcoreserverinterface.constants.ImCoreServerConstants;
 import com.example.liveappiminterface.constants.ImCodeEnum;
 import com.example.liveappiminterface.dto.ImMsgBodyDto;
 import io.netty.channel.ChannelHandlerContext;
 import jakarta.annotation.Resource;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Component;
 
@@ -21,6 +24,8 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class ImLogoutMsgHandlerImpl implements SimpleHandler {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(ImLogoutMsgHandlerImpl.class);
 
     @Resource
     private StringRedisTemplate stringRedisTemplate;
@@ -48,4 +53,20 @@ public class ImLogoutMsgHandlerImpl implements SimpleHandler {
         ImContextUtils.removeAppId(ctx);
         ctx.close();
     }
+
+    public void logoutHandler(ChannelHandlerContext ctx,Long userId,int appId){
+        //将IM消息回写给客户端
+        ImMsgBodyDto imMsgBodyDto=new ImMsgBodyDto();
+        imMsgBodyDto.setUserId(userId);
+        imMsgBodyDto.setAppId(appId);
+        imMsgBodyDto.setData("success");
+        ImMsg imMsgResp=ImMsg.build(ImCodeEnum.IM_LOGOUT.getCode(), JSON.toJSONString(imMsgBodyDto));
+        ctx.writeAndFlush(imMsgResp);
+        LOGGER.info("[LogoutMsgHandler] logout success, userId is {}, appId is {}", userId, appId);
+        //handlerLogout(userId, appId);
+        ImContextUtils.removeUserId(ctx);
+        ImContextUtils.removeAppId(ctx);
+        ctx.close();
+    }
+
 }

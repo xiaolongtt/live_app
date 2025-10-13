@@ -7,6 +7,7 @@ package com.example.liveappiminterface.constants;
  * @注释 IM消息码枚举类
  */
 public enum ImCodeEnum {
+    WS_FIRST_MSG(1000,"ws首次连接消息包"),
     IM_LOGIN(1001,"登录消息包"),
     IM_LOGOUT(1002,"登出消息包"),
     IM_MSG_BODY(1003,"业务消息包"),

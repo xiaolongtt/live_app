@@ -72,6 +72,7 @@ public class ILivingRoomServiceImpl implements ILivingRoomService {
     public LivingRoomInitVO anchorConfig(Long userID, Integer roomId) {
         LivingRoomRespDTO livingRoomRespDTO = livingRoomRpc.queryByRoomId(roomId);
         LivingRoomInitVO livingRoomInitVO=new LivingRoomInitVO();
+        //如果用户已经关播但是定时任务没有刷新，前端页面中还是存在直播间，但是在数据库中查询不到，返回给用户说明已经关播
         if(livingRoomRespDTO==null||livingRoomRespDTO.getAnchorId()==null||userID==null){
             livingRoomInitVO.setAnchor(false);
         }else{

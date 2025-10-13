@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
  * @version 1.0
  * @Author xiaolong
  * @Date 2025/10/12 22:15
- * @注释 实现一个定时任务，定时刷新直播房间列表储存到redis中
+ * @注释 实现一个定时任务，定时刷新直播房间列表储存到redis中，默认每1000ms刷新一次，使用一个分布式锁，保证只有一个线程进行刷新
  */
 public class RefreshLivingRoomListJob implements InitializingBean {
 

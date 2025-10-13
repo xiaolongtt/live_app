@@ -43,8 +43,6 @@ public class LivingRoomController {
         return new WebResponseVO().success(livingRoomService.listLivingRoom(livingRoomReqVO));
     }
 
-
-
     /**
      * 开启直播间
      * @param type
@@ -77,7 +75,7 @@ public class LivingRoomController {
 
     /**
      * 获取主播相关配置信息（只有主播才会有权限）
-     *
+     * @param roomId
      * @return
      */
     @PostMapping("/anchorConfig")

@@ -113,7 +113,7 @@ public class livingRoomServiceImpl implements ILivingRoomService {
         } else {
             List<LivingRoomRespDTO> livingRoomRespDTOS = ConvertBeanUtils.convertList(resultList, LivingRoomRespDTO.class);
             pageWrapper.setData(livingRoomRespDTOS);
-            pageWrapper.setHasNext(page * pageSize < total);
+            pageWrapper.setHasNext((long) page * pageSize < total);
             return pageWrapper;
         }
     }
