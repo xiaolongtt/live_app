@@ -15,6 +15,10 @@
     <file url="file://$PROJECT_DIR$/live-app-framework/web-starter/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/live-app-framework/web-starter/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/live-app-gateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/live-app-gift-interface/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/live-app-gift-interface/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/live-app-gift-provider/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/live-app-gift-provider/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/live-app-id-generate-interface/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/live-app-id-generate-provider/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/live-app-im-core-server-interface/src/main/java" charset="UTF-8" />
