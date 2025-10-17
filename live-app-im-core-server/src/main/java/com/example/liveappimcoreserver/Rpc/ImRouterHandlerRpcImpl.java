@@ -6,6 +6,8 @@ import com.example.liveappiminterface.dto.ImMsgBodyDto;
 import jakarta.annotation.Resource;
 import org.apache.dubbo.config.annotation.DubboService;
 
+import java.util.List;
+
 /**
  * @version 1.0
  * @Author xiaolong
@@ -19,5 +21,10 @@ public class ImRouterHandlerRpcImpl implements ImRouterHandlerRpc {
     @Override
     public void routerMsg(ImMsgBodyDto imMsgBodyDto) {
         imRouterHandlerServer.onReceive(imMsgBodyDto);
+    }
+
+    @Override
+    public void batchRouterMsg(List<ImMsgBodyDto> msgList) {
+        msgList.forEach(imRouterHandlerServer::onReceive);
     }
 }

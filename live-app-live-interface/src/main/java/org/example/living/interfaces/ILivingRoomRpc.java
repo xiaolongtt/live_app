@@ -4,6 +4,8 @@ import org.example.live.common.interfaces.Utils.PageWrapper;
 import org.example.living.dto.LivingRoomReqDTO;
 import org.example.living.dto.LivingRoomRespDTO;
 
+import java.util.List;
+
 /**
  * @version 1.0
  * @Author xiaolong
@@ -38,4 +40,12 @@ public interface ILivingRoomRpc {
      * @return
      */
     PageWrapper<LivingRoomRespDTO> list(LivingRoomReqDTO livingRoomReqDTO);
+
+    /**
+     * 根据直播间id查询直播间中的用户id列表
+     * @param livingRoomReqDTO
+     * @return
+     */
+    List<Long> queryUserIdsByRoomId(LivingRoomReqDTO livingRoomReqDTO);
+
 }

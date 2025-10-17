@@ -9,4 +9,5 @@ package org.example.living.constants;
 public class LivingRoomRedisKey {
     public static final String LIVING_ROOM_LIST_KEY = "livingRoomList:";
     public static final String LIVING_ROOM_KEY = "livingRoom:";
+    public static final String LIVING_ROOM_USER_ENTER_KEY = "livingRoomUserEnter:";
 }

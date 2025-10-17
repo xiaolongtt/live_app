@@ -6,11 +6,17 @@ import com.example.liveappimcoreserver.common.ImContextUtils;
 import com.example.liveappimcoreserver.common.ImMsg;
 import com.example.liveappimcoreserver.handler.SimpleHandler;
 import com.example.liveappimcoreserver.handler.Ws.WsSharkHandler;
+import com.example.liveappimcoreserverinterface.Dto.ImOfflineDTO;
+import com.example.liveappimcoreserverinterface.Dto.ImOnlineDTO;
 import com.example.liveappimcoreserverinterface.constants.ImCoreServerConstants;
 import com.example.liveappiminterface.constants.ImCodeEnum;
 import com.example.liveappiminterface.dto.ImMsgBodyDto;
 import io.netty.channel.ChannelHandlerContext;
 import jakarta.annotation.Resource;
+import org.apache.rocketmq.client.producer.MQProducer;
+import org.apache.rocketmq.client.producer.SendResult;
+import org.apache.rocketmq.common.message.Message;
+import org.example.live.common.interfaces.Topic.ImCoreServerProviderTopicNames;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.redis.core.StringRedisTemplate;
@@ -29,6 +35,9 @@ public class ImLogoutMsgHandlerImpl implements SimpleHandler {
 
     @Resource
     private StringRedisTemplate stringRedisTemplate;
+
+    @Resource
+    private MQProducer mqProducer;
 
     @Override
     public void handle(ChannelHandlerContext ctx, ImMsg imMsg) {
@@ -67,6 +76,29 @@ public class ImLogoutMsgHandlerImpl implements SimpleHandler {
         ImContextUtils.removeUserId(ctx);
         ImContextUtils.removeAppId(ctx);
         ctx.close();
+    }
+
+    /**
+     * 当用户登出成功后，使用消息队列将用户信息发出，在消费端将用户id与直播间id取消关联
+     * @param userId
+     * @param appId
+     * @param roomId
+     */
+    private void sendMqMsg(Long userId,Integer appId,Integer roomId){
+        ImOfflineDTO imOfflineDTO=new ImOfflineDTO();
+        imOfflineDTO.setUserId(userId);
+        imOfflineDTO.setAppId(appId);
+        imOfflineDTO.setLoginTime(System.currentTimeMillis());
+        imOfflineDTO.setRoomId(roomId);
+        Message message=new Message();
+        message.setTopic(ImCoreServerProviderTopicNames.IM_OFFLINE_TOPIC);
+        message.setBody(JSON.toJSONString(imOfflineDTO).getBytes());
+        try {
+            SendResult sendResult = mqProducer.send(message);
+            LOGGER.info("[sendLoginMQ] sendResult is {}", sendResult);
+        } catch (Exception e) {
+            LOGGER.error("[sendLoginMQ] error is: ", e);
+        }
     }
 
 }

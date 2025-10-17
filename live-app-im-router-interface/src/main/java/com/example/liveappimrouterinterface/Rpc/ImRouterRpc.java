@@ -2,6 +2,8 @@ package com.example.liveappimrouterinterface.Rpc;
 
 import com.example.liveappiminterface.dto.ImMsgBodyDto;
 
+import java.util.List;
+
 /**
  * @version 1.0
  * @Author xiaolong
@@ -14,4 +16,10 @@ public interface ImRouterRpc {
      * @param msg
      */
     void sendMsg(ImMsgBodyDto msg);
+
+    /**
+     * 批量发送消息，主要是用于群播的场景
+     * @param msgList
+     */
+    void batchSendMsg(List<ImMsgBodyDto> msgList);
 }

@@ -9,6 +9,8 @@ import org.example.living.dto.LivingRoomRespDTO;
 import org.example.living.interfaces.ILivingRoomRpc;
 import org.example.living.provider.Service.ILivingRoomService;
 
+import java.util.List;
+
 /**
  * @version 1.0
  * @Author xiaolong
@@ -39,5 +41,10 @@ public class livingRoomRpcImpl implements ILivingRoomRpc {
     @Override
     public PageWrapper<LivingRoomRespDTO> list(LivingRoomReqDTO livingRoomReqDTO) {
         return livingRoomService.list(livingRoomReqDTO);
+    }
+
+    @Override
+    public List<Long> queryUserIdsByRoomId(LivingRoomReqDTO livingRoomReqDTO) {
+        return livingRoomService.queryUserIdsByRoomId(livingRoomReqDTO);
     }
 }

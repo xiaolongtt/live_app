@@ -5,17 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4837df83-4849-4af5-b803-db299df046a2" name="更改" comment="v1.0">
-      <change afterPath="$PROJECT_DIR$/live-app-api/src/main/java/org/example/live/user/api/Service/ImServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-api/src/main/java/org/example/live/user/api/Service/Impl/ImServerImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-api/src/main/java/org/example/live/user/api/Vo/Resp/ImConfigVo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-api/src/main/java/org/example/live/user/api/controller/ImController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/42f462aa-479a-47c2-9de9-b0d6c48e82f3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/42f462aa-479a-47c2-9de9-b0d6c48e82f3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-live-provider/src/main/java/org/example/living/provider/Consumer/LivingRoomOfflineConsumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-live-provider/src/main/java/org/example/living/provider/Consumer/LivingRoomOnlineConsumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-msg-interface/src/main/java/org/example/live/msg/dto/MessageDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/live-app-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/live-app-api/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/live-app-api/src/main/java/org/example/live/user/api/Service/Impl/ILivingRoomServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-app-api/src/main/java/org/example/live/user/api/Service/Impl/ILivingRoomServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/live-app-api/src/main/java/org/example/live/user/api/controller/LivingRoomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-app-api/src/main/java/org/example/live/user/api/controller/LivingRoomController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/live-app-live-provider/src/main/java/org/example/living/provider/Config/RefreshLivingRoomListJob.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-app-live-provider/src/main/java/org/example/living/provider/Config/RefreshLivingRoomListJob.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-app-im-router-interface/src/main/java/com/example/liveappimrouterinterface/Rpc/ImRouterRpc.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-app-im-router-interface/src/main/java/com/example/liveappimrouterinterface/Rpc/ImRouterRpc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-app-im-router-provider/src/main/java/com/example/liveappimrouterprovider/Rpc/ImRouterRpcImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-app-im-router-provider/src/main/java/com/example/liveappimrouterprovider/Rpc/ImRouterRpcImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-app-im-router-provider/src/main/java/com/example/liveappimrouterprovider/server/ImRouterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-app-im-router-provider/src/main/java/com/example/liveappimrouterprovider/server/ImRouterService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-app-im-router-provider/src/main/java/com/example/liveappimrouterprovider/server/Impl/ImRouterServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-app-im-router-provider/src/main/java/com/example/liveappimrouterprovider/server/Impl/ImRouterServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-app-live-interface/src/main/java/org/example/living/constants/LivingRoomRedisKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-app-live-interface/src/main/java/org/example/living/constants/LivingRoomRedisKey.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-app-live-interface/src/main/java/org/example/living/interfaces/ILivingRoomRpc.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-app-live-interface/src/main/java/org/example/living/interfaces/ILivingRoomRpc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-app-live-provider/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/live-app-live-provider/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-app-live-provider/src/main/java/org/example/living/provider/Rpc/livingRoomRpcImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-app-live-provider/src/main/java/org/example/living/provider/Rpc/livingRoomRpcImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-app-live-provider/src/main/java/org/example/living/provider/Service/ILivingRoomService.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-app-live-provider/src/main/java/org/example/living/provider/Service/ILivingRoomService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/live-app-live-provider/src/main/java/org/example/living/provider/Service/impl/livingRoomServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-app-live-provider/src/main/java/org/example/living/provider/Service/impl/livingRoomServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-app-msg-interface/src/main/java/org/example/live/msg/constants/ImMsgBizCodeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-app-msg-interface/src/main/java/org/example/live/msg/constants/ImMsgBizCodeEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-app-msg-provider/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/live-app-msg-provider/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-app-msg-provider/src/main/java/org/example/live/msg/provicer/Consumer/handler/Impl/MessageHandlerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-app-msg-provider/src/main/java/org/example/live/msg/provicer/Consumer/handler/Impl/MessageHandlerImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -249,7 +255,8 @@
       <workItem from="1760283092979" duration="186000" />
       <workItem from="1760324062505" duration="60000" />
       <workItem from="1760324136296" duration="41000" />
-      <workItem from="1760324369447" duration="11106000" />
+      <workItem from="1760324369447" duration="22984000" />
+      <workItem from="1760682844981" duration="5128000" />
     </task>
     <task id="LOCAL-00001" summary="v1.0">
       <option name="closed" value="true" />

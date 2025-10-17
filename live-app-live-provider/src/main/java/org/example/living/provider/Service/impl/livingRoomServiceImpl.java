@@ -1,6 +1,8 @@
 package org.example.living.provider.Service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.example.liveappimcoreserverinterface.Dto.ImOfflineDTO;
+import com.example.liveappimcoreserverinterface.Dto.ImOnlineDTO;
 import jakarta.annotation.Resource;
 import org.example.live.common.interfaces.Enum.CommonStatusEnum;
 import org.example.live.common.interfaces.Utils.ConvertBeanUtils;
@@ -13,15 +15,14 @@ import org.example.living.provider.Dao.Mapper.LivingRoomRecordMapper;
 import org.example.living.provider.Dao.Po.LivingRoomPO;
 import org.example.living.provider.Dao.Po.LivingRoomRecordPO;
 import org.example.living.provider.Service.ILivingRoomService;
+import org.springframework.data.redis.core.Cursor;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.ScanOptions;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 
-import java.util.Collections;
-import java.util.Date;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -37,8 +38,38 @@ public class livingRoomServiceImpl implements ILivingRoomService {
     @Resource
     private LivingRoomRecordMapper livingRoomRecordMapper;
     @Resource
-    private RedisTemplate redisTemplate;
+    private RedisTemplate<String,Object> redisTemplate;
 
+    /**
+     * 主要用来在用户离开直播间后，将用户id从与roomId相关联的redis集合中移除
+     * @param imOfflineDTO
+     */
+    @Override
+    public void userLeaveLivingRoom(ImOfflineDTO imOfflineDTO) {
+        Integer roomId = imOfflineDTO.getRoomId();
+        Long userId = imOfflineDTO.getUserId();
+        Integer appId = imOfflineDTO.getAppId();
+        String key = LivingRoomRedisKey.LIVING_ROOM_USER_ENTER_KEY + roomId + ":" + appId;
+        redisTemplate.opsForSet().remove(key,userId);
+    }
+
+    /**
+     * 主要用来在用户进入直播间后，将用户id放入到与roomId相关联的redis集合中
+     * @param imOnlineDTO
+     */
+    public void userEnterLivingRoom(ImOnlineDTO imOnlineDTO){
+        Integer roomId = imOnlineDTO.getRoomId();
+        Long userId = imOnlineDTO.getUserId();
+        Integer appId = imOnlineDTO.getAppId();
+        String key = LivingRoomRedisKey.LIVING_ROOM_USER_ENTER_KEY + roomId + ":" + appId;
+        redisTemplate.opsForSet().add(key,userId,12,TimeUnit.HOURS);
+    }
+
+    /**
+     * 开启直播间
+     * @param livingRoomReqDTO
+     * @return
+     */
     @Override
     public Integer startingLiving(LivingRoomReqDTO livingRoomReqDTO) {
         LivingRoomPO livingRoomPO = ConvertBeanUtils.convert(livingRoomReqDTO, LivingRoomPO.class);
@@ -104,7 +135,7 @@ public class livingRoomServiceImpl implements ILivingRoomService {
         int pageSize = livingRoomReqDTO.getPageSize();
         Long total = redisTemplate.opsForList().size(LivingRoomRedisKey.LIVING_ROOM_LIST_KEY);
         //先查看redis中是否有缓存
-        List<LivingRoomRespDTO> resultList = redisTemplate.opsForList().range(LivingRoomRedisKey.LIVING_ROOM_LIST_KEY, (page - 1) * pageSize, (page * pageSize));
+        List<Object> resultList = redisTemplate.opsForList().range(LivingRoomRedisKey.LIVING_ROOM_LIST_KEY, (long) (page - 1) * pageSize, ((long) page * pageSize));
         PageWrapper<LivingRoomRespDTO> pageWrapper = new PageWrapper<>();
         if (CollectionUtils.isEmpty(resultList)) {
             pageWrapper.setData(Collections.emptyList());
@@ -133,5 +164,22 @@ public class livingRoomServiceImpl implements ILivingRoomService {
         List<LivingRoomPO> livingRoomPOS = livingRoomMapper.selectList(queryWrapper);
         return ConvertBeanUtils.convertList(livingRoomPOS, LivingRoomRespDTO.class);
     }
+
+    /**
+     * 根据直播间id查询直播间中的用户id列表
+     * @param livingRoomReqDTO
+     * @return
+     */
+     @Override
+    public List<Long> queryUserIdsByRoomId(LivingRoomReqDTO livingRoomReqDTO) {
+         String key = LivingRoomRedisKey.LIVING_ROOM_USER_ENTER_KEY + livingRoomReqDTO.getRoomId() + ":" + livingRoomReqDTO.getAppId();
+         //批次的从redis中获取用户数据
+         Cursor<Object> scan = redisTemplate.opsForSet().scan(key, ScanOptions.scanOptions().match("*").count(100).build());
+         List<Long> userIds = new ArrayList<>();
+         while(scan.hasNext()){
+             userIds.add((Long) scan.next());
+         }
+         return userIds;
+     }
 
 }

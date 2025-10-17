@@ -6,6 +6,8 @@ import com.example.liveappimrouterprovider.server.ImRouterService;
 import jakarta.annotation.Resource;
 import org.apache.dubbo.config.annotation.DubboService;
 
+import java.util.List;
+
 /**
  * @version 1.0
  * @Author xiaolong
@@ -19,5 +21,10 @@ public class ImRouterRpcImpl implements ImRouterRpc {
     @Override
     public void sendMsg(ImMsgBodyDto msg) {
         imRouterService.sendMsg(msg);
+    }
+
+    @Override
+    public void batchSendMsg(List<ImMsgBodyDto> msgList) {
+        imRouterService.batchSendMsg(msgList);
     }
 }

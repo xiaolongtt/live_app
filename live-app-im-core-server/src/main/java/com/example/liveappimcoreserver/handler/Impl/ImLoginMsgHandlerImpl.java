@@ -5,6 +5,7 @@ import com.example.liveappimcoreserver.common.ChannelHandlerContextCache;
 import com.example.liveappimcoreserver.common.ImContextUtils;
 import com.example.liveappimcoreserver.common.ImMsg;
 import com.example.liveappimcoreserver.handler.SimpleHandler;
+import com.example.liveappimcoreserverinterface.Dto.ImOnlineDTO;
 import com.example.liveappimcoreserverinterface.constants.ImCoreServerConstants;
 import com.example.liveappiminterface.Rpc.ImTokenRpc;
 import com.example.liveappiminterface.constants.AppIdEnum;
@@ -14,6 +15,15 @@ import com.example.liveappiminterface.dto.ImMsgBodyDto;
 import io.netty.channel.ChannelHandlerContext;
 import jakarta.annotation.Resource;
 import org.apache.dubbo.config.annotation.DubboReference;
+import org.apache.rocketmq.client.exception.MQBrokerException;
+import org.apache.rocketmq.client.exception.MQClientException;
+import org.apache.rocketmq.client.producer.MQProducer;
+import org.apache.rocketmq.client.producer.SendResult;
+import org.apache.rocketmq.common.message.Message;
+import org.apache.rocketmq.remoting.exception.RemotingException;
+import org.example.live.common.interfaces.Topic.ImCoreServerProviderTopicNames;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Component;
 
@@ -28,12 +38,22 @@ import java.util.concurrent.TimeUnit;
 @Component
 public class ImLoginMsgHandlerImpl implements SimpleHandler {
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(ImLoginMsgHandlerImpl.class);
+
     @DubboReference
     private ImTokenRpc imTokenRpc;
 
     @Resource
     private StringRedisTemplate stringRedisTemplate;
 
+    @Resource
+    private MQProducer mqProducer;
+
+    /**
+     * 这里是普通登录的消息处理方法，
+     * @param ctx 通道上下文
+     * @param imMsg 消息体
+     */
     @Override
     public void handle(ChannelHandlerContext ctx, ImMsg imMsg) {
         byte[] body = imMsg.getBody();
@@ -55,7 +75,7 @@ public class ImLoginMsgHandlerImpl implements SimpleHandler {
         Long userIdByToken = imTokenRpc.getUserIdByToken(token);
         //先校验token是否正确，然后给客户端返回登录成功的消息
         if(userIdByToken!=null && userIdByToken.equals(imMsgBodyDto.getUserId())){
-            loginSuccessHandler(ctx,userId,appId);
+            loginSuccessHandler(ctx,userId,appId,null);
             return ;
         }
         ctx.close();
@@ -63,17 +83,45 @@ public class ImLoginMsgHandlerImpl implements SimpleHandler {
     }
 
     /**
-     * 将登录成功单独抽离出来，供外界使用
-     * @param ctx
+     * 当用户登录成功后，使用消息队列将用户信息发出，在消费端将用户id与直播间id关联起来
      * @param userId
      * @param appId
+     * @param roomId
      */
-    public void loginSuccessHandler(ChannelHandlerContext ctx,Long userId,int appId){
+    private void sendMqMsg(Long userId,Integer appId,Integer roomId){
+        ImOnlineDTO imOnlineDTO=new ImOnlineDTO();
+        imOnlineDTO.setUserId(userId);
+        imOnlineDTO.setAppId(appId);
+        imOnlineDTO.setLoginTime(System.currentTimeMillis());
+        imOnlineDTO.setRoomId(roomId);
+        Message message=new Message();
+        message.setTopic(ImCoreServerProviderTopicNames.IM_ONLINE_TOPIC);
+        message.setBody(JSON.toJSONString(imOnlineDTO).getBytes());
+        try {
+            SendResult sendResult = mqProducer.send(message);
+            LOGGER.info("[sendLoginMQ] sendResult is {}", sendResult);
+        } catch (Exception e) {
+            LOGGER.error("[sendLoginMQ] error is: ", e);
+        }
+    }
+
+
+    /**
+     * 将登录成功单独抽离出来，供外界使用，主要登录分为两种，一种是登录系统，一种是登录直播间
+     * @param ctx 通道上下文
+     * @param userId 用户id
+     * @param appId 应用id
+     * @param roomId 房间id
+     */
+    public void loginSuccessHandler(ChannelHandlerContext ctx,Long userId,int appId,Integer roomId){
         //将channel与userId关联起来
         ChannelHandlerContextCache.put(userId,ctx);
         //给channel绑定上对应的id
         ImContextUtils.setUserId(userId,ctx);
         ImContextUtils.setAppId(appId,ctx);
+        if (roomId != null) {
+            ImContextUtils.setRoomId(ctx, roomId);
+        }
         //将信息返回给客户端
         ImMsgBodyDto imLoginSuccessBodyDto=new ImMsgBodyDto();
         imLoginSuccessBodyDto.setAppId(AppIdEnum.LIVE_BIZ.getCode());
@@ -85,6 +133,7 @@ public class ImLoginMsgHandlerImpl implements SimpleHandler {
                 ChannelHandlerContextCache.getServerIpAddress(),
                 ImConstants.DEFAULT_HEART_BEAT_TIME*2, TimeUnit.SECONDS);
         ctx.writeAndFlush(RespimMsg);
+        sendMqMsg(userId,appId,roomId);
     }
 
 }

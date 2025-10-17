@@ -2,6 +2,8 @@ package com.example.liveappimcoreserverinterface.rpc;
 
 import com.example.liveappiminterface.dto.ImMsgBodyDto;
 
+import java.util.List;
+
 /**
  * @version 1.0
  * @Author xiaolong
@@ -14,4 +16,10 @@ public interface ImRouterHandlerRpc {
      * @param imMsgBodyDto 消息体
      */
     void routerMsg(ImMsgBodyDto imMsgBodyDto);
+
+    /**
+     * 批量转发消息的接口
+     * @param msgList 消息列表
+     */
+    void batchRouterMsg(List<ImMsgBodyDto> msgList);
 }

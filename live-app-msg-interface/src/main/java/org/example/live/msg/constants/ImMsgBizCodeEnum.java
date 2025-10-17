@@ -8,9 +8,12 @@ package org.example.live.msg.constants;
  */
 public enum ImMsgBizCodeEnum {
 
-    CHAT(1001, "聊天业务线"),
+    LIVING_ROOM_IM_CHAT_MSG_BIZ(5555,"直播间im聊天消息"),
+    LIVING_ROOM_SEND_GIFT_SUCCESS(5556,"送礼成功"),
+    LIVING_ROOM_SEND_GIFT_FAIL(5557,"送礼失败"),
+    LIVING_ROOM_PK_SEND_GIFT_SUCCESS(5558,"pk送礼成功"),
+    LIVING_ROOM_PK_ONLINE(5559,"pk连线");
 
-    LIVESTREAM(1002, "直播业务线");
     int code;
     String desc;
 

@@ -58,6 +58,9 @@ public class WsSharkHandler extends ChannelInboundHandlerAdapter {
     }
 
     private void handleHttpRequest(ChannelHandlerContext ctx, FullHttpRequest msg) {
+        // ws://127.0.0.1:8809/token={token}&userId={userId}&{roomId}=roomId
+        // ws://127.0.0.1:8809/{token}/{userId}/{code}/{param}
+        // 基于code去做不同策略的参数解析
         //从配置中获取ip地址
         String serverIp = environment.getProperty("DUBBO_IP_TO_REGISTRY");
         String webSocketUrl = "ws://" + serverIp + ":" + port;
@@ -65,8 +68,9 @@ public class WsSharkHandler extends ChannelInboundHandlerAdapter {
         WebSocketServerHandshakerFactory wsFactory = new WebSocketServerHandshakerFactory(webSocketUrl, null, false);
         // 进行参数校验
         String uri = msg.uri();
-        String token = uri.substring(uri.indexOf("token"), uri.indexOf("&")).replaceAll("token=", "");
-        Long userId = Long.valueOf(uri.substring(uri.indexOf("userId")).replaceAll("userId=", ""));
+        String[] paramArr = uri.split("/");
+        String token = paramArr[1];
+        Long userId = Long.valueOf(paramArr[2]);
         Long queryUserId = imTokenRpc.getUserIdByToken(token);
         //token的最后与%拼接的就是appId
         int appId = Integer.parseInt(token.substring(token.indexOf("%") + 1));
@@ -84,9 +88,34 @@ public class WsSharkHandler extends ChannelInboundHandlerAdapter {
         ChannelFuture channelFuture = webSocketServerHandshaker.handshake(ctx.channel(), msg);
         // 首次握手建立ws连接后，返回一定的内容给到客户端
         if (channelFuture.isSuccess()) {
+            Integer code = Integer.valueOf(paramArr[3]);
+            Integer roomId = null;
+            if (code == ParamCodeEnum.LIVING_ROOM_LOGIN.getCode()) {
+                roomId = Integer.valueOf(paramArr[4]);
+            }
             //这里调用login消息包的处理器，直接做login成功的处理
-            loginMsgHandler.loginSuccessHandler(ctx, userId, appId);
+            loginMsgHandler.loginSuccessHandler(ctx, userId, appId, roomId);
             LOGGER.info("[WsSharkHandler] channel is connect");
+        }
+    }
+
+    enum ParamCodeEnum {
+        LIVING_ROOM_LOGIN(1001, "直播间登录");
+
+        int code;
+        String desc;
+
+        ParamCodeEnum(int code, String desc) {
+            this.code = code;
+            this.desc = desc;
+        }
+
+        public int getCode() {
+            return code;
+        }
+
+        public String getDesc() {
+            return desc;
         }
     }
 }

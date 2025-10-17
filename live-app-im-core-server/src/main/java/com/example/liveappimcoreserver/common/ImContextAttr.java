@@ -17,4 +17,10 @@ public class ImContextAttr {
      * 绑定应用id
      */
     public static AttributeKey<Integer> APP_ID= AttributeKey.valueOf("appId");
+
+    /**
+     * 绑定房间id
+     */
+    public static AttributeKey<Integer> ROOM_ID= AttributeKey.valueOf("roomId");
+
 }

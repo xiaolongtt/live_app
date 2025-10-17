@@ -59,4 +59,19 @@ public class ImContextUtils {
     public static void removeAppId(ChannelHandlerContext ctx){
         ctx.attr(ImContextAttr.APP_ID).set(null);
     }
+
+    public static Integer getRoomId(ChannelHandlerContext ctx) {
+        return ctx.attr(ImContextAttr.ROOM_ID).get();
+    }
+
+    public static void setRoomId(ChannelHandlerContext ctx, int roomId) {
+        ctx.attr(ImContextAttr.ROOM_ID).set(roomId);
+    }
+    /**
+     * 移除对应的roomId
+     * @param ctx
+     */
+    public static void removeRoomId(ChannelHandlerContext ctx){
+        ctx.attr(ImContextAttr.ROOM_ID).set(null);
+    }
 }
