@@ -1,7 +1,6 @@
 package com.example.livegiftprovider.Service.Impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.example.livegiftinterface.Dto.GiftConfigDTO;
 import com.example.livegiftinterface.constants.GiftRedisKeyConstants;
 import com.example.livegiftprovider.Dao.Mapper.GiftConfigMapper;

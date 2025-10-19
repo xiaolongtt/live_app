@@ -3,6 +3,7 @@ package org.example.live.user.api.controller;
 import com.example.webstarter.Error.BizBaseErrorEnum;
 import com.example.webstarter.Error.ErrorAssert;
 import com.example.webstarter.Interceptor.LiveRequestContext;
+import com.example.webstarter.Limit.RequestLimit;
 import jakarta.annotation.Resource;
 import org.example.live.common.interfaces.Utils.ConvertBeanUtils;
 import org.example.live.common.interfaces.Vo.WebResponseVO;
@@ -49,6 +50,7 @@ public class LivingRoomController {
      * @return
      */
     @PostMapping("/startingLive")
+    @RequestLimit(limit = 1,second = 10,msg = "开启直播间过于频繁") //自定义注解
     public WebResponseVO startingLiving(Integer type) {
         ErrorAssert.isNotNull(type, BizBaseErrorEnum.PARAM_ERROR);
         boolean result = livingRoomService.startingLiving(type);
@@ -64,6 +66,7 @@ public class LivingRoomController {
      * @return
      */
     @PostMapping("closingLive")
+    @RequestLimit(limit = 1,second = 10,msg = "关闭直播间过于频繁")
     public WebResponseVO closingLiving(Integer roomId){
         ErrorAssert.isNotNull(roomId, BizBaseErrorEnum.PARAM_ERROR);
         boolean result = livingRoomService.closingLiving(roomId);

@@ -5,38 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4837df83-4849-4af5-b803-db299df046a2" name="更改" comment="v1.0">
-      <change afterPath="$PROJECT_DIR$/live-app-gift-interface/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-gift-interface/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-gift-interface/src/main/java/com/example/livegiftinterface/Dto/GiftConfigDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-gift-interface/src/main/java/com/example/livegiftinterface/Dto/GiftRecordDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-gift-interface/src/main/java/com/example/livegiftinterface/Interface/IGiftConfigRpc.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-gift-interface/src/main/java/com/example/livegiftinterface/Interface/IGiftRecordRpc.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-gift-interface/src/main/java/com/example/livegiftinterface/constants/GiftRedisKeyConstants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-gift-interface/src/main/resources/META-INF/maven/archetype.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-gift-interface/src/main/resources/archetype-resources/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-gift-interface/src/main/resources/archetype-resources/src/main/java/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-gift-interface/src/main/resources/archetype-resources/src/test/java/AppTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-gift-provider/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-gift-provider/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-gift-provider/src/main/java/com/example/livegiftprovider/Dao/Mapper/GiftConfigMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-gift-provider/src/main/java/com/example/livegiftprovider/Dao/Mapper/GiftRecordMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-gift-provider/src/main/java/com/example/livegiftprovider/Dao/Po/GiftConfigPO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-gift-provider/src/main/java/com/example/livegiftprovider/Dao/Po/GiftRecordPO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-gift-provider/src/main/java/com/example/livegiftprovider/GiftProviderApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-gift-provider/src/main/java/com/example/livegiftprovider/Rpc/GiftConfigRpcImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-gift-provider/src/main/java/com/example/livegiftprovider/Rpc/GiftRecordRpcImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-gift-provider/src/main/java/com/example/livegiftprovider/Service/IGiftConfigService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-gift-provider/src/main/java/com/example/livegiftprovider/Service/IGiftRecordService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-gift-provider/src/main/java/com/example/livegiftprovider/Service/Impl/GiftConfigServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-gift-provider/src/main/java/com/example/livegiftprovider/Service/Impl/GiftRecordServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-gift-provider/src/main/resources/META-INF/maven/archetype.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-gift-provider/src/main/resources/archetype-resources/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-gift-provider/src/main/resources/archetype-resources/src/main/java/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-app-gift-provider/src/main/resources/archetype-resources/src/test/java/AppTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/42f462aa-479a-47c2-9de9-b0d6c48e82f3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/42f462aa-479a-47c2-9de9-b0d6c48e82f3.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-app-api/src/main/java/org/example/live/user/api/controller/LivingRoomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-app-api/src/main/java/org/example/live/user/api/controller/LivingRoomController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-app-gift-provider/src/main/java/com/example/livegiftprovider/Service/Impl/GiftConfigServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-app-gift-provider/src/main/java/com/example/livegiftprovider/Service/Impl/GiftConfigServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +20,7 @@
         <option value="Enum" />
         <option value="package-info" />
         <option value="Interface" />
+        <option value="AnnotationType" />
         <option value="Class" />
       </list>
     </option>
@@ -275,7 +247,7 @@
       <workItem from="1760324062505" duration="60000" />
       <workItem from="1760324136296" duration="41000" />
       <workItem from="1760324369447" duration="22984000" />
-      <workItem from="1760682844981" duration="11346000" />
+      <workItem from="1760682844981" duration="21220000" />
     </task>
     <task id="LOCAL-00001" summary="v1.0">
       <option name="closed" value="true" />

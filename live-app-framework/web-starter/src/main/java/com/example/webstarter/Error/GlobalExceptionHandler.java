@@ -26,6 +26,12 @@ public class GlobalExceptionHandler {
     }
 
 
+    /**
+     * 当出现异常以后，都会走到这里，输出日志，并且把异常信息返回给前端
+     * @param request
+     * @param e
+     * @return
+     */
     @ExceptionHandler(value = QiyuErrorException.class)
     @ResponseBody
     public WebResponseVO sysErrorHandler(HttpServletRequest request, QiyuErrorException e) {

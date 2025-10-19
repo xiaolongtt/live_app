@@ -1,6 +1,7 @@
 package com.example.webstarter.Config;
 
 import com.example.webstarter.Interceptor.LiveUserInfoInterceptor;
+import com.example.webstarter.Interceptor.RequestLimitInterceptor;
 import jakarta.annotation.Resource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -19,7 +20,10 @@ public class WebConfig implements WebMvcConfigurer {
     public LiveUserInfoInterceptor liveUserInfoInterceptor() {
         return new LiveUserInfoInterceptor();
     }
-
+    @Bean
+    public RequestLimitInterceptor requestLimitInterceptor() {
+        return new RequestLimitInterceptor();
+    }
     /**
      * 添加自定义拦截器
      * @param registry
@@ -27,5 +31,6 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(liveUserInfoInterceptor()).addPathPatterns("/**").excludePathPatterns("/error");
+        registry.addInterceptor(requestLimitInterceptor()).addPathPatterns("/**").excludePathPatterns("/error");
     }
 }
