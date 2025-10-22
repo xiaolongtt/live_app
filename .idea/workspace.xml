@@ -5,9 +5,52 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4837df83-4849-4af5-b803-db299df046a2" name="更改" comment="v1.0">
+      <change afterPath="$PROJECT_DIR$/live-app-api/src/main/java/org/example/live/user/api/Service/IGiftService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-api/src/main/java/org/example/live/user/api/Service/Impl/IGiftServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-api/src/main/java/org/example/live/user/api/Vo/Req/GiftReqVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-api/src/main/java/org/example/live/user/api/Vo/Resp/GiftConfigVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-api/src/main/java/org/example/live/user/api/controller/GiftController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-bank-interface/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-bank-interface/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-bank-interface/src/main/java/com/example/livebankinterface/Dto/AccountTradeReqDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-bank-interface/src/main/java/com/example/livebankinterface/Dto/AccountTradeRespDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-bank-interface/src/main/java/com/example/livebankinterface/Dto/QiyuCurrencyAccountDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-bank-interface/src/main/java/com/example/livebankinterface/Dto/SendGiftMqDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-bank-interface/src/main/java/com/example/livebankinterface/Rpc/IQiyuCurrencyAccountRpc.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-bank-interface/src/main/java/com/example/livebankinterface/constants/AccountTradeRedisKey.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-bank-interface/src/main/java/com/example/livebankinterface/constants/TradeTypeEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-bank-interface/src/main/resources/META-INF/maven/archetype.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-bank-interface/src/main/resources/archetype-resources/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-bank-interface/src/main/resources/archetype-resources/src/main/java/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-bank-interface/src/main/resources/archetype-resources/src/test/java/AppTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-bank-provider/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-bank-provider/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-bank-provider/src/main/java/com/example/livebankprovider/BankProviderApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-bank-provider/src/main/java/com/example/livebankprovider/dao/Mapper/QiyuCurrencyAccountMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-bank-provider/src/main/java/com/example/livebankprovider/dao/Mapper/QiyuCurrencyTradeMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-bank-provider/src/main/java/com/example/livebankprovider/dao/Po/QiyuCurrencyAccountPO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-bank-provider/src/main/java/com/example/livebankprovider/dao/Po/QiyuCurrencyTradePO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-bank-provider/src/main/java/com/example/livebankprovider/rpc/QiyuCurrencyAccountRpcImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-bank-provider/src/main/java/com/example/livebankprovider/service/IQiyuCurrencyAccountService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-bank-provider/src/main/java/com/example/livebankprovider/service/IQiyuCurrencyTradeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-bank-provider/src/main/java/com/example/livebankprovider/service/Impl/QiyuCurrencyAccountServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-bank-provider/src/main/java/com/example/livebankprovider/service/Impl/QiyuCurrencyTradeServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-bank-provider/src/main/resources/META-INF/maven/archetype.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-bank-provider/src/main/resources/archetype-resources/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-bank-provider/src/main/resources/archetype-resources/src/main/java/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-bank-provider/src/main/resources/archetype-resources/src/test/java/AppTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-common-interface/src/main/java/org/example/live/common/interfaces/Topic/sendGiftServiceTopicName.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-app-gift-provider/src/main/java/com/example/livegiftprovider/consumer/SendGiftConsumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/42f462aa-479a-47c2-9de9-b0d6c48e82f3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/42f462aa-479a-47c2-9de9-b0d6c48e82f3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/live-app-api/src/main/java/org/example/live/user/api/controller/LivingRoomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-app-api/src/main/java/org/example/live/user/api/controller/LivingRoomController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/live-app-gift-provider/src/main/java/com/example/livegiftprovider/Service/Impl/GiftConfigServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-app-gift-provider/src/main/java/com/example/livegiftprovider/Service/Impl/GiftConfigServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-app-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/live-app-api/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-app-gift-interface/src/main/java/com/example/livegiftinterface/constants/GiftRedisKeyConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-app-gift-interface/src/main/java/com/example/livegiftinterface/constants/GiftRedisKeyConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-app-gift-provider/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/live-app-gift-provider/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-app-msg-interface/src/main/java/org/example/live/msg/constants/ImMsgBizCodeEnum.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-app-msg-provider/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/live-app-msg-provider/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-app-msg-provider/src/main/java/org/example/live/msg/provicer/Consumer/handler/Impl/MessageHandlerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-app-msg-provider/src/main/java/org/example/live/msg/provicer/Consumer/handler/Impl/MessageHandlerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +62,8 @@
       <list>
         <option value="Enum" />
         <option value="package-info" />
-        <option value="Interface" />
         <option value="AnnotationType" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -100,6 +143,7 @@
       <recent name="com.example.liveappaccountprovider.service" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.livebankinterface.Dto" />
       <recent name="com.example.livegiftinterface.Dto" />
     </key>
   </component>
@@ -247,7 +291,7 @@
       <workItem from="1760324062505" duration="60000" />
       <workItem from="1760324136296" duration="41000" />
       <workItem from="1760324369447" duration="22984000" />
-      <workItem from="1760682844981" duration="21220000" />
+      <workItem from="1760682844981" duration="45714000" />
     </task>
     <task id="LOCAL-00001" summary="v1.0">
       <option name="closed" value="true" />

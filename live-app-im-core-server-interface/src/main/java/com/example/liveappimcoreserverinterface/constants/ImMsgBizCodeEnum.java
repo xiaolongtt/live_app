@@ -1,4 +1,4 @@
-package org.example.live.msg.constants;
+package com.example.liveappimcoreserverinterface.constants;
 
 /**
  * @version 1.0

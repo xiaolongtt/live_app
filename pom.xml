@@ -28,6 +28,8 @@
     <module>live-app-live-provider</module>
       <module>live-app-gift-interface</module>
     <module>live-app-gift-provider</module>
+      <module>live-app-bank-interface</module>
+      <module>live-app-bank-provider</module>
   </modules>
   <artifactId>live-app</artifactId>
   <version>1.0-SNAPSHOT</version>

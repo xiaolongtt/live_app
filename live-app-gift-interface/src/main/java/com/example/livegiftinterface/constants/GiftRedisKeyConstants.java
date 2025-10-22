@@ -7,5 +7,13 @@ package com.example.livegiftinterface.constants;
  * @注释
  */
 public class GiftRedisKeyConstants {
+    /**
+     * 礼物key
+     */
     public static final String GIFT_CONFIG_KEY = "gift:config:";
+
+    /**
+     * 防止消费端重复消费key
+     */
+    public static final String SEND_GIFT_LOCK_KEY = "gift:config:lock:";
 }
