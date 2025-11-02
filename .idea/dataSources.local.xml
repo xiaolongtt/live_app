@@ -12,8 +12,11 @@
       <schema-mapping>
         <introspection-scope>
           <node kind="schema">
-            <name qname="live-app" />
+            <name qname="live-living" />
+            <name qname="live-gift" />
+            <name qname="live-bank" />
             <name qname="@" />
+            <name qname="live-app" />
             <name qname="live_app_common" />
           </node>
         </introspection-scope>

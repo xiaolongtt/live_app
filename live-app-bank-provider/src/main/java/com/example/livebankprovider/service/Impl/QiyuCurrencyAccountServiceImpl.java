@@ -2,18 +2,16 @@ package com.example.livebankprovider.service.Impl;
 
 import com.example.livebankinterface.Dto.AccountTradeReqDTO;
 import com.example.livebankinterface.Dto.AccountTradeRespDTO;
-import com.example.livebankinterface.constants.AccountTradeRedisKey;
 import com.example.livebankinterface.constants.TradeTypeEnum;
+import com.example.livebankinterface.constants.liveBankRedisKey;
 import com.example.livebankprovider.dao.Mapper.QiyuCurrencyAccountMapper;
 import com.example.livebankprovider.dao.Po.QiyuCurrencyAccountPO;
 import com.example.livebankprovider.service.IQiyuCurrencyAccountService;
 import com.example.livebankprovider.service.IQiyuCurrencyTradeService;
-import com.example.webstarter.Error.ErrorAssert;
 import jakarta.annotation.Resource;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
@@ -50,18 +48,25 @@ public class QiyuCurrencyAccountServiceImpl implements IQiyuCurrencyAccountServi
 
     @Override
     public void incr(long userId, int num) {
-        QiyuCurrencyAccountPO qiyuCurrencyAccountPO = qiyuCurrencyAccountMapper.selectById(userId);
-        if(qiyuCurrencyAccountPO == null){
-            return;
+        String key = liveBankRedisKey.ACCOUNT_BALANCE_KEY + ":" + userId;
+        if(redisTemplate.hasKey(key)){
+            redisTemplate.opsForValue().increment(key,num);
+            redisTemplate.expire(key,5, TimeUnit.MINUTES);
         }
-        qiyuCurrencyAccountPO.setCurrentBalance(qiyuCurrencyAccountPO.getCurrentBalance() + num);
-        qiyuCurrencyAccountMapper.updateById(qiyuCurrencyAccountPO);
+        threadPoolExecutor.execute(new Runnable() {
+            @Override
+            public void run() {
+                //分布式架构下，cap理论，可用性和性能，强一致性，柔弱的一致性处理
+                //在异步线程池中完成数据库层的扣减和流水记录插入操作，带有事务
+                incrBalanceByDb(userId, num);
+            }
+        });
     }
 
     @Override
     public void decr(long userId, int num) {
         //采用先更新redis中的值，再更新数据库中的值
-        String key = AccountTradeRedisKey.ACCOUNT_BALANCE_KEY + ":" + userId;
+        String key = liveBankRedisKey.ACCOUNT_BALANCE_KEY + ":" + userId;
         if(Boolean.TRUE.equals(redisTemplate.hasKey(key))){
             redisTemplate.opsForValue().decrement(key,num);
             redisTemplate.expire(key,5, TimeUnit.MINUTES);
@@ -77,7 +82,7 @@ public class QiyuCurrencyAccountServiceImpl implements IQiyuCurrencyAccountServi
 
     @Override
     public Integer getBalance(long userId) {
-        String key = AccountTradeRedisKey.ACCOUNT_BALANCE_KEY + ":" + userId;
+        String key = liveBankRedisKey.ACCOUNT_BALANCE_KEY + ":" + userId;
         Integer balance = (Integer) redisTemplate.opsForValue().get(key);
         if(balance!=null){
             if(balance==-1){
@@ -124,5 +129,17 @@ public class QiyuCurrencyAccountServiceImpl implements IQiyuCurrencyAccountServi
         qiyuCurrencyAccountMapper.updateById(qiyuCurrencyAccountPO);
         //进行流水记录
         currencyTradeService.insertOne(userId, num*-1, TradeTypeEnum.SEND_GIFT_TRADE.getCode());
+    }
+
+    @Transactional(rollbackFor = Exception.class)
+    public void incrBalanceByDb(long userId, int num) {
+        QiyuCurrencyAccountPO qiyuCurrencyAccountPO = qiyuCurrencyAccountMapper.selectById(userId);
+        if(qiyuCurrencyAccountPO == null){
+            return;
+        }
+        qiyuCurrencyAccountPO.setCurrentBalance(qiyuCurrencyAccountPO.getCurrentBalance() + num);
+        qiyuCurrencyAccountMapper.updateById(qiyuCurrencyAccountPO);
+        //进行流水记录
+        currencyTradeService.insertOne(userId, num, TradeTypeEnum.SEND_GIFT_TRADE.getCode());
     }
 }

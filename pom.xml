@@ -30,6 +30,7 @@
     <module>live-app-gift-provider</module>
       <module>live-app-bank-interface</module>
       <module>live-app-bank-provider</module>
+      <module>live-app-bank-api</module>
   </modules>
   <artifactId>live-app</artifactId>
   <version>1.0-SNAPSHOT</version>
